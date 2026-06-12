@@ -8,7 +8,7 @@ import TeamPage from './pages/TeamPage'
 import StorePage from './pages/StorePage'
 import PrivacyPage from './pages/PrivacyPage'
 import BeginnerPage from './pages/BeginnerPage'
-import { Analytics } from '@vercel/analytics/next'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
 	return (
