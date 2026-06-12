@@ -8,25 +8,26 @@ import TeamPage from './pages/TeamPage'
 import StorePage from './pages/StorePage'
 import PrivacyPage from './pages/PrivacyPage'
 import BeginnerPage from './pages/BeginnerPage'
+import { Analytics } from '@vercel/analytics/next'
 
 function App() {
-  return (
-    <div className="app">
-      <ScrollToTop />
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/regulamin" element={<RulesPage />} />
-          <Route path="/ekipa" element={<TeamPage />} />
-          <Route path="/sklep" element={<StorePage />} />
-          <Route path="/polityka-prywatnosci" element={<PrivacyPage />} />
-          <Route path="/dla-poczatkujacych" element={<BeginnerPage />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
-  )
+	return (
+		<div className="app">
+			<ScrollToTop />
+			<Navbar />
+			<main>
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/regulamin" element={<RulesPage />} />
+					<Route path="/ekipa" element={<TeamPage />} />
+					<Route path="/sklep" element={<StorePage />} />
+					<Route path="/polityka-prywatnosci" element={<PrivacyPage />} />
+					<Route path="/dla-poczatkujacych" element={<BeginnerPage />} />
+				</Routes>
+			</main>
+			<Footer />
+		</div>
+	)
 }
 
 export default App
