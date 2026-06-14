@@ -1,4 +1,17 @@
-node_modules
-dist
+node_modules/
+dist/
 .env
 .env.local
+.env.*
+*.local
+
+# Vite cache
+.vite/
+
+# Claude Code internal
+.claude/
+.impeccable/
+
+# OS
+.DS_Store
+Thumbs.db

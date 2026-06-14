@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(npx impeccable *)",
-      "Bash(node .agents/skills/impeccable/scripts/context.mjs)"
-    ]
-  }
-}
