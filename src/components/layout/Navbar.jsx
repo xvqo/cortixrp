@@ -17,8 +17,17 @@ export default function Navbar() {
   const pathname = usePathname()
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (open) {
+      document.body.style.overflow = 'hidden'
+      window.lenis?.stop()
+    } else {
+      document.body.style.overflow = ''
+      window.lenis?.start()
+    }
+    return () => {
+      document.body.style.overflow = ''
+      window.lenis?.start()
+    }
   }, [open])
 
   useEffect(() => {
@@ -31,10 +40,10 @@ export default function Navbar() {
   return (
     <nav
       className={`sticky top-0 z-[100] border-b transition-colors duration-300 ${
-        scrolled ? 'border-primary/12 bg-bg-deep/25 backdrop-blur-xl' : 'border-transparent bg-transparent'
+        scrolled && !open ? 'border-primary/12 bg-bg-deep/25 backdrop-blur-xl' : 'border-transparent bg-transparent'
       }`}
     >
-      <div className="mx-auto flex h-[72px] max-w-page items-center gap-8 px-8 min-[1921px]:max-w-wide max-md:px-6">
+      <div className="relative z-10 mx-auto flex h-[72px] max-w-page items-center gap-8 px-8 min-[1921px]:max-w-wide max-md:px-6">
         <Link
           href="/"
           className="mr-auto font-display text-xl font-extrabold uppercase tracking-tight text-ink [font-stretch:115%]"
@@ -92,15 +101,15 @@ export default function Navbar() {
       </div>
 
       <div className={`nav-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
-        <ul className="flex flex-col items-center gap-7">
+        <ul className="flex w-full flex-col items-center gap-7">
           {links.map(({ to, label }) => {
             const active = pathname === to
             return (
-              <li key={to}>
+              <li key={to} className="w-full">
                 <Link
                   href={to}
                   onClick={() => setOpen(false)}
-                  className={`font-display text-[clamp(2rem,8vw,2.8rem)] font-extrabold tracking-tight [font-stretch:115%] transition-colors duration-200 ${
+                  className={`block text-balance text-center font-display text-[clamp(1.75rem,7vw,2.5rem)] font-extrabold leading-[1.1] tracking-tight [font-stretch:115%] transition-colors duration-200 ${
                     active ? 'text-primary text-glow-shadow' : 'text-ink-muted hover:text-ink'
                   }`}
                 >
