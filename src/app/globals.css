@@ -130,7 +130,6 @@
 @keyframes auroraA { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(8%,6%) scale(1.12); } }
 @keyframes auroraB { 0%, 100% { transform: translate(0,0) scale(1.05); } 50% { transform: translate(-7%,9%) scale(0.92); } }
 @keyframes auroraC { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-6%,-8%) scale(1.1); } }
-@keyframes beamSweep { 0% { transform: translateX(0) rotate(16deg); opacity: 0; } 12% { opacity: 1; } 48% { transform: translateX(520%) rotate(16deg); opacity: 1; } 60%, 100% { transform: translateX(520%) rotate(16deg); opacity: 0; } }
 
 /* ════════════════════════════════════════════════════════════ UTILITIES */
 @layer utilities {
@@ -242,15 +241,7 @@
     background: radial-gradient(circle, oklch(0.46 0.16 264 / 0.55), transparent 66%);
     animation: auroraC 21s ease-in-out infinite;
   }
-  .cta-beam { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
-  .cta-beam::before {
-    content: ''; position: absolute; top: -60%; left: -40%; width: 22%; height: 220%;
-    transform: rotate(16deg); transform-origin: center;
-    background: linear-gradient(90deg, transparent, oklch(0.9 0.1 215 / 0.14), transparent);
-    filter: blur(6px);
-    animation: beamSweep 11s ease-in-out infinite;
-  }
-  @media (prefers-reduced-motion: reduce) { .cta-aurora span, .cta-beam::before { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .cta-aurora span { animation: none; } }
 
   /* ── Stats grid background ── */
   .stats-grid {

@@ -1,12 +1,14 @@
+import FluidShader from '@/components/FluidShader'
+
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 export default function CtaSection() {
   return (
     <section className="relative overflow-hidden bg-bg px-8 py-32 max-lg:py-24 max-md:px-6 max-[480px]:px-5 max-[480px]:py-16" aria-label="Dołącz do serwera">
+      <FluidShader dim={0.32} />
       <div className="cta-aurora" aria-hidden="true">
         <span /><span /><span />
       </div>
-      <div className="cta-beam" aria-hidden="true" />
       <div className="scrim-cta" aria-hidden="true" />
       <div className="relative z-[3] mx-auto flex max-w-narrow flex-col items-center gap-6 text-center min-[1921px]:max-w-[860px]">
         <span className="kicker">Whitelist otwarta</span>
