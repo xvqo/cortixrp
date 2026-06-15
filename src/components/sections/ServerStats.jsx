@@ -34,8 +34,7 @@ export default function ServerStats() {
       <div className="stats-grid" aria-hidden="true" />
       <div className="relative z-[1] mx-auto max-w-page px-8 min-[1921px]:max-w-wide max-md:px-6">
         <div className="mb-14 max-w-[58ch] max-md:mb-10 max-md:text-center">
-          <span className="kicker">W liczbach</span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
+          <h2 className="font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
             Żywy serwer, realna społeczność
           </h2>
         </div>

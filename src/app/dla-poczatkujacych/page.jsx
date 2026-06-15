@@ -103,7 +103,6 @@ export default function BeginnerPage() {
 
         {/* Jak dołączyć — timeline */}
         <section className="beginner-section">
-          <span className="kicker">Krok po kroku</span>
           <h2 className="beginner-title">Jak dołączyć do serwera</h2>
           <p className="beginner-sub">
             CortixRP działa na systemie whitelist: każdy gracz przechodzi krótką weryfikację.

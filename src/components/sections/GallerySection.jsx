@@ -89,8 +89,7 @@ export default function GallerySection() {
     <section className="py-32 max-lg:py-24 max-[480px]:py-16" aria-label="Galeria serwera">
       <div className="mx-auto max-w-page px-8 min-[1921px]:max-w-wide max-[480px]:px-5">
         <div className="mb-12 max-w-[60ch]">
-          <span className="kicker">Galeria</span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
+          <h2 className="font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
             Tak wygląda noc w Los Santos
           </h2>
           <p className="mt-3 text-lg leading-[1.6] text-ink-muted">Kadry z codziennej rozgrywki na serwerze.</p>

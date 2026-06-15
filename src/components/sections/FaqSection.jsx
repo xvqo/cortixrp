@@ -79,8 +79,7 @@ export default function FaqSection() {
     <section className="py-32 max-sm:py-24" aria-label="Najczęściej zadawane pytania">
       <div className="mx-auto grid max-w-page grid-cols-[1fr_1.5fr] items-start gap-[clamp(3rem,6vw,6rem)] px-8 min-[1921px]:max-w-wide max-[900px]:grid-cols-1 max-[900px]:gap-10 max-md:px-6">
         <div>
-          <span className="kicker">FAQ</span>
-          <h2 className="mb-5 mt-4 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
+          <h2 className="mb-5 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
             Pytania<br />i odpowiedzi
           </h2>
           <p className="mb-8 max-w-[34ch] text-base leading-[1.7] text-ink-muted max-[900px]:max-w-none">
