@@ -106,11 +106,11 @@ export default function PrivacyPage() {
             <h2><span className="privacy-num">06</span>Twoje prawa</h2>
             <p>Na podstawie RODO przysługują Ci następujące prawa:</p>
             <ul>
-              <li><strong>Dostęp</strong> — możesz zapytać, jakie dane przechowujemy</li>
-              <li><strong>Sprostowanie</strong> — możesz żądać poprawienia nieprawidłowych danych</li>
-              <li><strong>Usunięcie</strong> — możesz żądać trwałego usunięcia swoich danych</li>
-              <li><strong>Ograniczenie</strong> — możesz ograniczyć zakres przetwarzania</li>
-              <li><strong>Sprzeciw</strong> — możesz wnieść sprzeciw wobec przetwarzania</li>
+              <li><strong>Dostęp</strong>: możesz zapytać, jakie dane przechowujemy</li>
+              <li><strong>Sprostowanie</strong>: możesz żądać poprawienia nieprawidłowych danych</li>
+              <li><strong>Usunięcie</strong>: możesz żądać trwałego usunięcia swoich danych</li>
+              <li><strong>Ograniczenie</strong>: możesz ograniczyć zakres przetwarzania</li>
+              <li><strong>Sprzeciw</strong>: możesz wnieść sprzeciw wobec przetwarzania</li>
             </ul>
             <p>
               Aby skorzystać z powyższych praw, otwórz ticket na{' '}

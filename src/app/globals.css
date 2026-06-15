@@ -20,7 +20,7 @@
 
   --color-ink:            oklch(0.96 0.012 250);
   --color-ink-muted:      oklch(0.74 0.030 250);
-  --color-ink-faint:      oklch(0.56 0.030 254);
+  --color-ink-faint:      oklch(0.60 0.030 254);
 
   --color-online:         oklch(0.80 0.18 150);
 
@@ -138,7 +138,6 @@
   .reveal.is-hidden { opacity: 0; transform: translateY(28px); filter: blur(8px); }
   @media (scripting: none) { .reveal.is-hidden { opacity: 1; transform: none; filter: none; } }
 
-  .font-mono-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
   .text-glow-shadow { text-shadow: 0 0 40px oklch(0.66 0.18 248 / 0.45); }
 }
 
@@ -337,17 +336,16 @@
   .faq-item:first-child { border-top: 1px solid var(--color-border); }
   .faq-item.is-hidden { opacity: 0; transform: translateY(24px); filter: blur(6px); }
   @media (scripting: none) { .faq-item.is-hidden { opacity: 1; transform: none; filter: none; } }
-  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 1rem; background: none; border: none; cursor: pointer; text-align: left; transition: padding-left 0.3s cubic-bezier(0.16,1,0.3,1); }
-  .faq-q:hover { padding-left: calc(1rem + 6px); }
-  .faq-q-text { font-size: var(--text-lg); font-weight: 600; color: var(--color-ink); line-height: 1.4; transition: color 0.2s ease-out; }
-  .faq-q:hover .faq-q-text { color: var(--color-primary-hover); }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 1rem; background: none; border: none; cursor: pointer; text-align: left; }
+  .faq-q-text { font-size: var(--text-lg); font-weight: 600; color: var(--color-ink); line-height: 1.4; transition: color 0.2s ease-out, transform 0.3s cubic-bezier(0.16,1,0.3,1); }
+  .faq-q:hover .faq-q-text { color: var(--color-primary-hover); transform: translateX(6px); }
   .faq-chevron { flex-shrink: 0; color: var(--color-ink-faint); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), color 0.2s ease-out; }
   .faq-item.is-open .faq-chevron { transform: rotate(180deg); color: var(--color-primary); }
   .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s cubic-bezier(0.16,1,0.3,1); }
   .faq-item.is-open .faq-answer { grid-template-rows: 1fr; }
   .faq-answer-inner { overflow: hidden; }
   .faq-answer-inner p { padding: 0 1rem 1.5rem; font-size: var(--text-base); color: var(--color-ink-muted); line-height: 1.75; max-width: 64ch; }
-  @media (hover: none) { .faq-q:hover { padding-left: 1rem; } .faq-q:hover .faq-q-text { color: var(--color-ink); } }
+  @media (hover: none) { .faq-q:hover .faq-q-text { color: var(--color-ink); transform: none; } }
 
   /* ════════ DOC PAGE HERO (regulamin / dla-poczatkujacych) ════════ */
   .doc-hero { position: relative; overflow: hidden; min-height: calc(60vh + 72px); margin-top: -72px; display: flex; align-items: flex-end; }
@@ -417,12 +415,6 @@
   .beginner-step:last-child .beginner-step-body { border-bottom: none; padding-bottom: 0; }
   .beginner-step-body h3 { font-size: var(--text-xl); font-weight: 700; font-stretch: 108%; color: var(--color-ink); letter-spacing: -0.015em; margin-bottom: 0.5rem; }
   .beginner-step-body p { font-size: var(--text-base); color: var(--color-ink-muted); line-height: 1.75; max-width: 60ch; text-wrap: pretty; }
-  .beginner-tips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .beginner-tip { position: relative; overflow: hidden; padding: 2rem; background: var(--color-surface); border: 1px solid oklch(0.66 0.18 248 / 0.12); border-radius: var(--radius-lg); transition: border-color 0.25s ease-out, transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease-out; }
-  .beginner-tip:hover { border-color: oklch(0.66 0.18 248 / 0.4); transform: translateY(-4px); box-shadow: 0 18px 50px -20px oklch(0.10 0.03 258 / 0.9); }
-  .beginner-tip-num { position: absolute; top: -0.15em; right: 1rem; font-family: var(--font-display); font-size: 5.5rem; font-weight: 800; font-stretch: 120%; color: var(--color-primary); opacity: 0.08; line-height: 1; pointer-events: none; user-select: none; }
-  .beginner-tip h3 { font-size: var(--text-xl); font-weight: 700; font-stretch: 108%; color: var(--color-ink); letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 0.75rem; text-wrap: balance; }
-  .beginner-tip p { font-size: var(--text-sm); color: var(--color-ink-muted); line-height: 1.75; text-wrap: pretty; }
   .beginner-glossary { display: grid; grid-template-columns: repeat(2, 1fr); }
   .beginner-glossary-item { padding: 1.25rem 0.5rem; border-bottom: 1px solid oklch(0.30 0.04 256 / 0.5); display: flex; flex-direction: column; gap: 0.25rem; transition: background 0.2s ease-out; }
   .beginner-glossary-item:hover { background: oklch(0.66 0.18 248 / 0.04); }
@@ -446,7 +438,6 @@
   }
   @media (max-width: 768px) {
     .beginner-inner { padding: 0 1.5rem 6rem; }
-    .beginner-tips { grid-template-columns: 1fr; }
     .beginner-glossary { grid-template-columns: 1fr; }
     .beginner-glossary-item:nth-child(even) { padding-left: 0.5rem; border-left: none; }
     .beginner-glossary-item:nth-child(odd) { padding-right: 0.5rem; }
@@ -456,7 +447,6 @@
     .beginner-step { gap: 1rem; } .beginner-step-num { width: 2.8rem; }
     .beginner-cta { padding: 1.5rem; text-align: center; } .beginner-cta-content p { max-width: none; }
   }
-  @media (hover: none) { .beginner-tip:hover { transform: none; box-shadow: none; border-color: oklch(0.66 0.18 248 / 0.12); } }
 
   /* ════════ PRIVACY (polityka-prywatnosci) ════════ */
   .privacy-toc { position: sticky; top: 96px; align-self: start; display: flex; flex-direction: column; gap: 0.25rem; }

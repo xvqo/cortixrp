@@ -7,18 +7,18 @@ import FluidShader from '@/components/FluidShader'
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 const STEPS = [
-  { num: '01', title: 'Dołącz na Discord', desc: 'Wejdź na nasz serwer Discord — to centrum całej społeczności. Tam znajdziesz ogłoszenia, kanały tematyczne i kontakt z ekipą.' },
+  { num: '01', title: 'Dołącz na Discord', desc: 'Wejdź na nasz serwer Discord. To centrum całej społeczności. Tam znajdziesz ogłoszenia, kanały tematyczne i kontakt z ekipą.' },
   { num: '02', title: 'Przeczytaj regulamin', desc: 'Zapoznaj się dokładnie z zasadami gry w kanale #regulamin. Znajomość regulaminu jest wymagana podczas rozmowy weryfikacyjnej.' },
-  { num: '03', title: 'Czekaj na otwarte okienko', desc: 'Rekrutacja odbywa się w ustalonych terminach. Śledź kanał #ogłoszenia — tam pojawiają się informacje o otwartych okienkach.' },
+  { num: '03', title: 'Czekaj na otwarte okienko', desc: 'Rekrutacja odbywa się w ustalonych terminach. Śledź kanał #ogłoszenia: tam pojawiają się informacje o otwartych okienkach.' },
   { num: '04', title: 'Wejdź na kanał głosowy', desc: 'Gdy rekrutacja jest otwarta, przejdź na dedykowany kanał głosowy. Upewnij się, że masz sprawny mikrofon.' },
   { num: '05', title: 'Zdaj rozmowę', desc: 'Porozmawiasz z członkiem ekipy, który sprawdzi czy znasz zasady i rozumiesz klimat roleplay. To nieformalna rozmowa, nie egzamin.' },
 ]
 
 const FIRST_STEPS = [
   { title: 'Stwórz swoją postać', desc: 'Wymyśl imię, historię i osobowość. Im bardziej przemyślana postać, tym lepsza rozgrywka dla Ciebie i innych.' },
-  { title: 'Zacznij od legalnej pracy', desc: 'Na starcie wybierz legalną pracę — taksówkarz, mechanik, dostawca. Zarobisz pierwsze pieniądze i poznasz miasto.' },
+  { title: 'Zacznij od legalnej pracy', desc: 'Na starcie wybierz legalną pracę: taksówkarz, mechanik, dostawca. Zarobisz pierwsze pieniądze i poznasz miasto.' },
   { title: 'Rozmawiaj zawsze IC', desc: 'Na serwerze jesteś swoją postacią. Używaj voice chatu, traktuj innych jak ich postacie, nie jak graczy.' },
-  { title: 'Nie śpiesz się', desc: 'Dobry RP to nie wyścig. Rób rzeczy powoli i naturalnie — każda interakcja to okazja do budowania historii.' },
+  { title: 'Nie śpiesz się', desc: 'Dobry RP to nie wyścig. Rób rzeczy powoli i naturalnie. Każda interakcja to okazja do budowania historii.' },
 ]
 
 const TERMS = [
@@ -28,7 +28,7 @@ const TERMS = [
   { abbr: 'PG',     name: 'Power Gaming',       def: 'Wymuszanie na innych nierealistycznych akcji lub ignorowanie ich reakcji.' },
   { abbr: 'RDM',    name: 'Random Deathmatch',  def: 'Zabicie kogoś bez żadnego powodu fabularnego.' },
   { abbr: 'VDM',    name: 'Vehicle Deathmatch', def: 'Celowe potrącanie graczy samochodem bez uzasadnienia RP.' },
-  { abbr: 'BW',     name: 'Bleed Out / Black',  def: 'Stan nieprzytomności — Twoja postać leży i czeka na pomoc lub ewakuację.' },
+  { abbr: 'BW',     name: 'Bleed Out / Black',  def: 'Stan nieprzytomności: Twoja postać leży i czeka na pomoc lub ewakuację.' },
   { abbr: 'CK',     name: 'Character Kill',     def: 'Permanentna śmierć postaci. Wymaga specjalnej zgody administracji.' },
   { abbr: 'NJ',     name: 'Ninja Jack',         def: 'Kradzież pojazdu bez żadnej interakcji RP z kierowcą. Zakazana.' },
   { abbr: 'CB',     name: 'Cop Bait',           def: 'Celowe prowokowanie policji bez sensu fabularnego.' },
@@ -106,7 +106,7 @@ export default function BeginnerPage() {
           <span className="kicker">Krok po kroku</span>
           <h2 className="beginner-title">Jak dołączyć do serwera</h2>
           <p className="beginner-sub">
-            CortixRP działa na systemie whitelist — każdy gracz przechodzi krótką weryfikację.
+            CortixRP działa na systemie whitelist: każdy gracz przechodzi krótką weryfikację.
             Rekrutacja odbywa się w otwartych okienkach, o których dowiesz się na Discordzie.
           </p>
 
@@ -134,7 +134,7 @@ export default function BeginnerPage() {
         {/* Pierwsze kroki — tips */}
         <section className="beginner-section">
           <h2 className="beginner-title">Pierwsze kroki na serwerze</h2>
-          <p className="beginner-sub">Dostałeś whitelist — co teraz? Cztery rzeczy na dobry start.</p>
+          <p className="beginner-sub">Dostałeś whitelist. Co teraz? Cztery rzeczy na dobry start.</p>
           <div className="grid grid-cols-2 gap-x-14 max-[760px]:grid-cols-1">
             {FIRST_STEPS.map((tip, i) => (
               <div
