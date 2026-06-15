@@ -6,7 +6,7 @@ export const OG_TYPE = 'image/png'
 // Branded Open Graph card. Diacritic-free copy so it renders reliably with the
 // default font (no network font fetch needed at build time).
 export function ogImage({
-  eyebrow = 'Serwer FiveM Roleplay',
+  eyebrow = 'Serwer Roleplay',
   subtitle = 'Twoja historia w Los Santos',
 } = {}) {
   return new ImageResponse(
@@ -43,7 +43,7 @@ export function ogImage({
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', fontSize: 27, color: '#8493b3' }}>
           <div style={{ display: 'flex' }}>cortixrp.pl</div>
-          <div style={{ display: 'flex', color: '#2fa8ff' }}>Whitelist &middot; Discord</div>
+          <div style={{ display: 'flex', color: '#2fa8ff' }}>Los Santos</div>
         </div>
       </div>
     ),
