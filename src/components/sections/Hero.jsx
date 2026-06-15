@@ -35,9 +35,14 @@ export default function Hero() {
     <section className="relative -mt-[72px] flex min-h-[100dvh] items-center overflow-hidden bg-bg pt-[72px]">
       <FluidShader dim={0.9} />
 
-      <div ref={charRef} className="hero-characters-wrap" aria-hidden="true">
-        <img src="/characters.png" alt="" className="hero-characters" draggable={false} />
-      </div>
+      <img
+        ref={charRef}
+        src="/characters.png"
+        alt=""
+        aria-hidden="true"
+        className="hero-characters"
+        draggable={false}
+      />
 
       <div className="scrim-hero" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] h-52 bg-gradient-to-t from-bg to-transparent" aria-hidden="true" />

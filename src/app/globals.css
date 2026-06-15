@@ -122,8 +122,6 @@
 
 /* ════════════════════════════════════════════════════════════ KEYFRAMES */
 @keyframes heroFadeUp  { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes charIn { from { opacity: 0; transform: translateY(46px) scale(1.03); } to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes charGlowIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes dotPulse { 0%,100% { box-shadow: 0 0 0 0 oklch(0.80 0.18 150 / 0.55); } 55% { box-shadow: 0 0 0 8px oklch(0.80 0.18 150 / 0); } }
 @keyframes lightboxContentIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
 @keyframes lightboxFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -189,22 +187,15 @@
   @media (prefers-reduced-motion: reduce) { .shader-fallback { animation: none; } }
 
   /* ── Hero characters (wrapper = parallax, img = glow + entrance) ── */
-  .hero-characters-wrap {
-    position: absolute; left: 48%; bottom: 0; height: 86dvh; z-index: 2;
-    pointer-events: none; user-select: none; will-change: transform;
-  }
   .hero-characters {
-    height: 100%; width: auto; display: block;
-    filter:
-      brightness(0.66) contrast(1.05) saturate(0.95)
-      drop-shadow(0 0 38px oklch(0.66 0.18 248 / 0.42))
-      drop-shadow(0 12px 64px oklch(0.82 0.15 208 / 0.18));
+    position: absolute; left: 48%; bottom: 0; height: 88%; width: auto;
+    pointer-events: none; user-select: none; z-index: 2;
+    filter: brightness(0.62) contrast(1.05) saturate(0.9);
     mask-image: linear-gradient(to right, transparent 0%, black 8%), linear-gradient(to top, transparent 0%, black 12%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%), linear-gradient(to top, transparent 0%, black 12%);
-    -webkit-mask-composite: source-in; mask-composite: intersect;
-    animation: charIn 1.4s cubic-bezier(0.16,1,0.3,1) 0.15s both;
+    -webkit-mask-composite: source-in; mask-composite: intersect; will-change: transform;
   }
-  @media (max-width: 1024px) { .hero-characters-wrap { display: none; } }
+  @media (max-width: 1024px) { .hero-characters { display: none; } }
 
   /* ── Scrims / glows (multi-stop gradients) ── */
   .scrim-hero {
