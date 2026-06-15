@@ -20,13 +20,11 @@ export const metadata = {
     url: 'https://cortixrp.pl',
     siteName: 'CortixRP',
     locale: 'pl_PL',
-    images: [{ url: '/hero-bg.png', width: 1906, height: 873, alt: 'CortixRP — nocne Los Santos' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'CortixRP — Serwer FiveM',
     description: 'Casualowy serwer roleplay FiveM z systemem whitelist.',
-    images: ['/hero-bg.png'],
   },
 }
 
