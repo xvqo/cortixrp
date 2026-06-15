@@ -1,6 +1,7 @@
+'use client'
+
 import { useState, useRef, useEffect } from 'react'
-import styles from './GallerySection.module.css'
-import { galleryImages } from '../../data/galleryImages'
+import { galleryImages } from '@/data/galleryImages'
 
 function ImageIcon() {
   return (
@@ -59,14 +60,14 @@ export default function GallerySection() {
     const items = gridRef.current?.querySelectorAll('[data-gallery-item]')
     if (!items) return
 
-    items.forEach(el => el.classList.add(styles.itemHidden))
+    items.forEach(el => el.classList.add('is-hidden'))
 
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const idx = Number(entry.target.dataset.galleryItem)
-            setTimeout(() => entry.target.classList.remove(styles.itemHidden), idx * 55)
+            setTimeout(() => entry.target.classList.remove('is-hidden'), idx * 55)
             observer.unobserve(entry.target)
           }
         })
@@ -85,18 +86,21 @@ export default function GallerySection() {
   const current = lightboxIndex !== null ? galleryImages[lightboxIndex] : null
 
   return (
-    <section className={styles.section} aria-label="Galeria serwera">
-      <div className={styles.inner}>
-        <div className={styles.header}>
-          <h2 className={styles.heading}>Zajrzyj na serwer</h2>
-          <p className={styles.sub}>Screenshoty z codziennej rozgrywki.</p>
+    <section className="py-32 max-lg:py-24 max-[480px]:py-16" aria-label="Galeria serwera">
+      <div className="mx-auto max-w-page px-8 min-[1921px]:max-w-wide max-[480px]:px-5">
+        <div className="mb-12 max-w-[60ch]">
+          <span className="kicker">Galeria</span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
+            Tak wygląda noc w Los Santos
+          </h2>
+          <p className="mt-3 text-lg leading-[1.6] text-ink-muted">Kadry z codziennej rozgrywki na serwerze.</p>
         </div>
 
-        <div className={styles.grid} ref={gridRef}>
+        <div className="gallery-grid" ref={gridRef}>
           {galleryImages.map((img, i) => (
             <button
               key={i}
-              className={styles.item}
+              className="gallery-item"
               data-variant={img.variant}
               data-gallery-item={i}
               onClick={() => openLightbox(i)}
@@ -105,7 +109,7 @@ export default function GallerySection() {
               {img.src ? (
                 <img src={img.src} alt={img.alt} loading="lazy" />
               ) : (
-                <div className={styles.placeholder} aria-hidden="true">
+                <div className="gallery-placeholder" aria-hidden="true">
                   <ImageIcon />
                 </div>
               )}
@@ -116,38 +120,24 @@ export default function GallerySection() {
 
       <dialog
         ref={dialogRef}
-        className={styles.lightbox}
+        className="lightbox"
         onClick={onDialogClick}
         aria-label={current ? `Zdjęcie: ${current.alt}` : 'Podgląd zdjęcia'}
       >
         {current && (
           <>
-            <div className={styles.lightboxContent}>
-              {current.src ? (
-                <img
-                  src={current.src}
-                  alt={current.alt}
-                  className={styles.lightboxImg}
-                />
-              ) : (
-                <div className={styles.lightboxPlaceholder} aria-hidden="true">
-                  <ImageIcon />
-                </div>
-              )}
+            <div className="lightbox-content">
+              <img key={lightboxIndex} src={current.src} alt={current.alt} className="lightbox-img" />
             </div>
 
-            <button
-              className={styles.lightboxClose}
-              onClick={closeLightbox}
-              aria-label="Zamknij podgląd"
-            >
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Zamknij podgląd">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </button>
 
             <button
-              className={`${styles.lightboxNav} ${styles.lightboxPrev}`}
+              className="lightbox-nav lightbox-prev"
               onClick={() => setLightboxIndex(i => (i - 1 + galleryImages.length) % galleryImages.length)}
               aria-label="Poprzednie zdjęcie"
             >
@@ -157,7 +147,7 @@ export default function GallerySection() {
             </button>
 
             <button
-              className={`${styles.lightboxNav} ${styles.lightboxNext}`}
+              className="lightbox-nav lightbox-next"
               onClick={() => setLightboxIndex(i => (i + 1) % galleryImages.length)}
               aria-label="Następne zdjęcie"
             >
@@ -166,9 +156,9 @@ export default function GallerySection() {
               </svg>
             </button>
 
-            <div className={styles.lightboxMeta}>
-              <p className={styles.lightboxCaption}>{current.alt}</p>
-              <p className={styles.lightboxCounter} aria-live="polite">
+            <div className="lightbox-meta">
+              <p className="lightbox-caption">{current.alt}</p>
+              <p className="lightbox-counter" aria-live="polite">
                 {lightboxIndex + 1} / {galleryImages.length}
               </p>
             </div>

@@ -1,54 +1,21 @@
-import { useEffect, useRef } from 'react'
-import styles from './CtaSection.module.css'
-
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 export default function CtaSection() {
-  const innerRef = useRef(null)
-
-  useEffect(() => {
-    const el = innerRef.current
-    if (!el) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-
-    el.classList.add(styles.innerHidden)
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.remove(styles.innerHidden)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.15 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section className={styles.section} aria-label="Dołącz do serwera">
-      <img
-        src="/image6.png"
-        alt=""
-        aria-hidden="true"
-        className={styles.bg}
-        draggable={false}
-      />
-      <div className={styles.overlay} aria-hidden="true" />
-      <div className={styles.glow} aria-hidden="true" />
-      <div className={styles.inner} ref={innerRef}>
-        <h2 className={styles.heading}>Gotowy na Los Santos?</h2>
-        <p className={styles.sub}>
-          Dołącz na Discord, przejdź krótką weryfikację i wskocz do miasta.
+    <section className="relative overflow-hidden bg-bg px-8 py-32 max-lg:py-24 max-md:px-6 max-[480px]:px-5 max-[480px]:py-16" aria-label="Dołącz do serwera">
+      <div className="cta-halo" aria-hidden="true" />
+      <div className="cta-core" aria-hidden="true" />
+      <div className="scrim-cta" aria-hidden="true" />
+      <div className="relative z-[3] mx-auto flex max-w-narrow flex-col items-center gap-6 text-center min-[1921px]:max-w-[860px]">
+        <span className="kicker">Whitelist otwarta</span>
+        <h2 className="font-display text-3xl font-extrabold leading-none tracking-[-0.025em] text-ink [font-stretch:115%]">
+          Gotowy na <em className="not-italic text-primary text-glow-shadow">Los Santos</em>?
+        </h2>
+        <p className="max-w-[46ch] text-lg leading-[1.7] text-ink-muted max-md:text-base">
+          Wejdź na Discord, przejdź krótką weryfikację i wskocz do miasta jeszcze dziś.
         </p>
-        <div className={styles.actions}>
-          <a
-            href={DISCORD_URL}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.btnPrimary}
-          >
+        <div className="mt-2 flex flex-wrap justify-center gap-4 max-[480px]:w-full max-[480px]:flex-col">
+          <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn-primary max-[480px]:w-full">
             Dołącz na Discord
           </a>
         </div>

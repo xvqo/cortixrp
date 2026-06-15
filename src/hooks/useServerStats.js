@@ -12,6 +12,7 @@ export function useServerStats() {
 }
 
 // -- Live version (uncomment when ready) --
+// 'use client'
 // import { useState, useEffect } from 'react'
 // const SERVER_IP = 'YOUR_IP:PORT'
 //

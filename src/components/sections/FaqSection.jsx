@@ -1,5 +1,6 @@
+'use client'
+
 import { useState, useEffect, useRef } from 'react'
-import styles from './FaqSection.module.css'
 
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
@@ -26,24 +27,21 @@ const FAQS = [
   },
   {
     q: 'Jak zgłosić gracza lub problem techniczny?',
-    a: 'Zgłoszenia trafiają przez system ticketów na Discordzie. Nigdy nie zgłaszaj problemów w grze na kanale IC — wyłącznie ticket system. Staramy się odpowiadać na każde zgłoszenie w ciągu kilku godzin.',
+    a: 'Zgłoszenia trafiają przez system ticketów na Discordzie. Nigdy nie zgłaszaj problemów w grze na kanale IC, wyłącznie ticket system. Staramy się odpowiadać na każde zgłoszenie w ciągu kilku godzin.',
   },
 ]
 
 function FaqItem({ question, answer, open, onToggle, index }) {
   return (
-    <div
-      className={`${styles.item} ${open ? styles.itemOpen : ''}`}
-      data-faq-item={index}
-    >
-      <button className={styles.question} onClick={onToggle} aria-expanded={open}>
-        <span className={styles.questionText}>{question}</span>
-        <svg className={styles.chevron} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <div className={`faq-item ${open ? 'is-open' : ''}`} data-faq-item={index}>
+      <button className="faq-q" onClick={onToggle} aria-expanded={open}>
+        <span className="faq-q-text">{question}</span>
+        <svg className="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-      <div className={styles.answer}>
-        <div className={styles.answerInner}>
+      <div className="faq-answer">
+        <div className="faq-answer-inner">
           <p>{answer}</p>
         </div>
       </div>
@@ -56,54 +54,52 @@ export default function FaqSection() {
   const listRef = useRef(null)
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const isMobile = window.matchMedia('(max-width: 900px)').matches
-    if (prefersReduced || isMobile) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const items = listRef.current?.querySelectorAll('[data-faq-item]')
     if (!items) return
-
-    items.forEach(el => el.classList.add(styles.itemHidden))
+    items.forEach((el) => el.classList.add('is-hidden'))
 
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const idx = Number(entry.target.dataset.faqItem)
-            setTimeout(() => {
-              entry.target.classList.remove(styles.itemHidden)
-            }, idx * 60)
-            observer.unobserve(entry.target)
-          }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          const idx = Number(entry.target.dataset.faqItem)
+          setTimeout(() => entry.target.classList.remove('is-hidden'), idx * 70)
+          observer.unobserve(entry.target)
         })
       },
       { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
     )
-
-    items.forEach(el => observer.observe(el))
+    items.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section className={styles.section} aria-label="Najczęściej zadawane pytania">
-      <div className={styles.inner}>
-
-        {/* Left: heading + context */}
-        <div className={styles.header}>
-          <h2 className={styles.heading}>Pytania<br />i odpowiedzi</h2>
-          <p className={styles.sub}>
+    <section className="py-32 max-sm:py-24" aria-label="Najczęściej zadawane pytania">
+      <div className="mx-auto grid max-w-page grid-cols-[1fr_1.5fr] items-start gap-[clamp(3rem,6vw,6rem)] px-8 min-[1921px]:max-w-wide max-[900px]:grid-cols-1 max-[900px]:gap-10 max-md:px-6">
+        <div>
+          <span className="kicker">FAQ</span>
+          <h2 className="mb-5 mt-4 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
+            Pytania<br />i odpowiedzi
+          </h2>
+          <p className="mb-8 max-w-[34ch] text-base leading-[1.7] text-ink-muted max-[900px]:max-w-none">
             Zebraliśmy odpowiedzi na najczęstsze pytania przed dołączeniem do serwera.
           </p>
-          <a href={DISCORD_URL} target="_blank" rel="noreferrer" className={styles.discordLink}>
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 font-mono text-sm font-medium text-glow transition-colors duration-200 hover:text-ink"
+          >
             Napisz do nas na Discord
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M3 11L11 3M11 3H6M11 3v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
+              <path d="M3 11L11 3M11 3H6M11 3v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
         </div>
 
-        {/* Right: accordion */}
-        <div className={styles.list} ref={listRef}>
+        <div className="flex flex-col" ref={listRef}>
           {FAQS.map((faq, i) => (
             <FaqItem
               key={i}
@@ -115,7 +111,6 @@ export default function FaqSection() {
             />
           ))}
         </div>
-
       </div>
     </section>
   )

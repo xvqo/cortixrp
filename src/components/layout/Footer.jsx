@@ -1,78 +1,64 @@
-import { NavLink } from 'react-router-dom'
-import styles from './Footer.module.css'
+import Link from 'next/link'
 
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
-const AVENLY_URL  = 'https://avenly.pl/'
+const AVENLY_URL = 'https://avenly.pl/'
 
 const NAV_LINKS = [
-  { to: '/regulamin',          label: 'Regulamin'          },
+  { to: '/regulamin', label: 'Regulamin' },
   { to: '/dla-poczatkujacych', label: 'Dla początkujących' },
 ]
 
-
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.inner}>
+    <footer className="relative border-t border-primary/15 bg-bg-deep">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <div className="mx-auto max-w-page px-8 pb-8 pt-16 min-[1921px]:max-w-wide max-md:px-6 max-md:pt-12 max-[480px]:px-5">
 
-        {/* ── Główna siatka: brand + sitemap ── */}
-        <div className={styles.main}>
-
-          {/* Brand po lewej */}
-          <div className={styles.brand}>
-            <NavLink to="/" className={styles.logo}>
-              Cortix<span>RP</span>
-            </NavLink>
-            <p className={styles.tagline}>
+        <div className="mb-10 flex items-start justify-between gap-16 max-md:flex-col max-md:gap-8 max-[480px]:items-center max-[480px]:text-center">
+          <div className="flex flex-col gap-4 max-[480px]:items-center">
+            <Link href="/" className="font-display text-xl font-extrabold uppercase leading-none tracking-tight text-ink [font-stretch:115%]">
+              Cortix<span className="text-primary">RP</span>
+            </Link>
+            <p className="max-w-[34ch] text-sm leading-[1.65] text-ink-faint">
               Casualowy serwer roleplay na FiveM.<br />
               Los Santos czeka.
             </p>
           </div>
 
-          {/* Sitemap po prawej */}
-          <div className={styles.sitemap}>
-            <div className={styles.col}>
-              <p className={styles.colLabel}>Nawigacja</p>
-              <ul>
+          <div className="flex shrink-0 gap-12 max-[480px]:justify-center max-[480px]:gap-10">
+            <div className="flex min-w-[120px] flex-col gap-4 max-[480px]:items-center">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary">Nawigacja</p>
+              <ul className="flex flex-col gap-3">
                 {NAV_LINKS.map(({ to, label }) => (
                   <li key={to}>
-                    <NavLink to={to} className={styles.link}>{label}</NavLink>
+                    <Link href={to} className="text-sm text-ink-muted transition-colors duration-200 hover:text-ink">{label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
-
-            <div className={styles.col}>
-              <p className={styles.colLabel}>Social media</p>
-              <ul>
+            <div className="flex min-w-[120px] flex-col gap-4 max-[480px]:items-center">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary">Social media</p>
+              <ul className="flex flex-col gap-3">
                 <li>
-                  <a href={DISCORD_URL} target="_blank" rel="noreferrer" className={styles.link}>Discord</a>
+                  <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="text-sm text-ink-muted transition-colors duration-200 hover:text-ink">Discord</a>
                 </li>
               </ul>
             </div>
           </div>
-
         </div>
 
-        {/* ── Divider ── */}
-        <div className={styles.divider} aria-hidden="true" />
+        <div className="mb-6 h-px bg-border" />
 
-        {/* ── Bottom bar ── */}
-        <div className={styles.bottom}>
-          <p className={styles.copy}>© {new Date().getFullYear()} CortixRP</p>
-
-          <p className={styles.disclaimer}>
+        <div className="flex flex-wrap items-center justify-between gap-6 max-md:flex-col max-md:items-start max-md:gap-2 max-[480px]:items-center max-[480px]:text-center">
+          <p className="whitespace-nowrap font-mono text-xs text-ink-faint">© {new Date().getFullYear()} CortixRP</p>
+          <p className="flex-1 text-center text-xs text-ink-faint max-md:flex-none max-md:text-left max-[480px]:text-center">
             This server is not affiliated with or endorsed by Rockstar Games.
           </p>
-
-          <p className={styles.avelyLine}>
+          <p className="whitespace-nowrap text-xs text-ink-faint">
             Strona stworzona przez{' '}
-            <a href={AVENLY_URL} target="_blank" rel="noreferrer" className={styles.avelyLink}>
-              avenly.pl
-            </a>
+            <a href={AVENLY_URL} target="_blank" rel="noreferrer" className="font-semibold text-ink-muted transition-colors duration-200 hover:text-primary">avenly.pl</a>
           </p>
         </div>
-
       </div>
     </footer>
   )
