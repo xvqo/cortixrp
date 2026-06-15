@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -14,18 +15,27 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
 
+  useEffect(() => setMounted(true), [])
+
+  // Lock scroll while the mobile menu is open (covers Lenis + native touch)
   useEffect(() => {
+    const html = document.documentElement
+    const body = document.body
     if (open) {
-      document.body.style.overflow = 'hidden'
+      html.style.overflow = 'hidden'
+      body.style.overflow = 'hidden'
       window.lenis?.stop()
     } else {
-      document.body.style.overflow = ''
+      html.style.overflow = ''
+      body.style.overflow = ''
       window.lenis?.start()
     }
     return () => {
-      document.body.style.overflow = ''
+      html.style.overflow = ''
+      body.style.overflow = ''
       window.lenis?.start()
     }
   }, [open])
@@ -36,6 +46,39 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const overlay = (
+    <div className={`nav-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
+      <ul className="flex w-full flex-col items-center gap-7">
+        {links.map(({ to, label }) => {
+          const active = pathname === to
+          return (
+            <li key={to} className="w-full">
+              <Link
+                href={to}
+                onClick={() => setOpen(false)}
+                className={`block text-balance text-center font-display text-[clamp(1.75rem,7vw,2.5rem)] font-extrabold leading-[1.1] tracking-tight [font-stretch:115%] transition-colors duration-200 ${
+                  active ? 'text-primary text-glow-shadow' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                {label}
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+
+      <a
+        href={DISCORD_URL}
+        target="_blank"
+        rel="noreferrer"
+        onClick={() => setOpen(false)}
+        className="btn-primary mt-2 text-base"
+      >
+        Dołącz przez Discord
+      </a>
+    </div>
+  )
 
   return (
     <nav
@@ -100,36 +143,7 @@ export default function Navbar() {
         </a>
       </div>
 
-      <div className={`nav-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
-        <ul className="flex w-full flex-col items-center gap-7">
-          {links.map(({ to, label }) => {
-            const active = pathname === to
-            return (
-              <li key={to} className="w-full">
-                <Link
-                  href={to}
-                  onClick={() => setOpen(false)}
-                  className={`block text-balance text-center font-display text-[clamp(1.75rem,7vw,2.5rem)] font-extrabold leading-[1.1] tracking-tight [font-stretch:115%] transition-colors duration-200 ${
-                    active ? 'text-primary text-glow-shadow' : 'text-ink-muted hover:text-ink'
-                  }`}
-                >
-                  {label}
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-
-        <a
-          href={DISCORD_URL}
-          target="_blank"
-          rel="noreferrer"
-          onClick={() => setOpen(false)}
-          className="btn-primary mt-2 text-base"
-        >
-          Dołącz przez Discord
-        </a>
-      </div>
+      {mounted && createPortal(overlay, document.body)}
     </nav>
   )
 }
