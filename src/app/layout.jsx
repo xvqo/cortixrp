@@ -48,6 +48,34 @@ export default function RootLayout({ children }) {
         <link rel="preload" as="image" href="/hero-bg.png" fetchPriority="high" />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://cortixrp.pl/#org',
+                  name: 'CortixRP',
+                  url: 'https://cortixrp.pl',
+                  logo: 'https://cortixrp.pl/favicon.svg',
+                  sameAs: ['https://discord.gg/CZEtYxkTDy'],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://cortixrp.pl/#website',
+                  name: 'CortixRP — Serwer FiveM',
+                  url: 'https://cortixrp.pl',
+                  inLanguage: 'pl-PL',
+                  description:
+                    'Casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
+                  publisher: { '@id': 'https://cortixrp.pl/#org' },
+                },
+              ],
+            }),
+          }}
+        />
         <SmoothScroll />
         <Navbar />
         <main>{children}</main>
