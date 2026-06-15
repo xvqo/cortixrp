@@ -4,8 +4,14 @@ import Footer from '@/components/layout/Footer'
 import SmoothScroll from '@/components/SmoothScroll'
 import './globals.css'
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
+  (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
+  'https://cortixrp.pl'
+
 export const metadata = {
-  metadataBase: new URL('https://cortixrp.pl'),
+  metadataBase: new URL(SITE_URL),
   title: 'CortixRP — Serwer FiveM',
   description:
     'CortixRP to casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord, przejdź weryfikację i wskocz do Los Santos.',
@@ -17,7 +23,7 @@ export const metadata = {
     title: 'CortixRP — Serwer FiveM',
     description:
       'Casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
-    url: 'https://cortixrp.pl',
+    url: SITE_URL,
     siteName: 'CortixRP',
     locale: 'pl_PL',
   },
