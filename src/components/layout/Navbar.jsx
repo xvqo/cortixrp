@@ -49,6 +49,25 @@ export default function Navbar() {
 
   const overlay = (
     <div className={`nav-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
+      <div className="absolute inset-x-0 top-0 flex h-[72px] items-center justify-between px-6">
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className="font-display text-xl font-extrabold uppercase tracking-tight text-ink [font-stretch:115%]"
+        >
+          Cortix<span className="text-primary text-glow-shadow">RP</span>
+        </Link>
+        <button
+          onClick={() => setOpen(false)}
+          aria-label="Zamknij menu"
+          className="-mr-1.5 flex h-11 w-11 items-center justify-center text-ink-muted transition-colors hover:text-ink"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+      </div>
+
       <ul className="flex w-full flex-col items-center gap-7">
         {links.map(({ to, label }) => {
           const active = pathname === to
