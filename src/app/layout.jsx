@@ -11,15 +11,23 @@ export const metadata = {
     'CortixRP to casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord, przejdź weryfikację i wskocz do Los Santos.',
   icons: { icon: '/favicon.svg' },
   verification: { google: 'X91OcjHGhJup6yjiLG6xmwvXQZvVEELLlPa0zvzl78k' },
+  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     title: 'CortixRP — Serwer FiveM',
     description:
       'Casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
     url: 'https://cortixrp.pl',
-    images: ['/og-image.png'],
+    siteName: 'CortixRP',
+    locale: 'pl_PL',
+    images: [{ url: '/hero-bg.png', width: 1906, height: 873, alt: 'CortixRP — nocne Los Santos' }],
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CortixRP — Serwer FiveM',
+    description: 'Casualowy serwer roleplay FiveM z systemem whitelist.',
+    images: ['/hero-bg.png'],
+  },
 }
 
 export const viewport = {
