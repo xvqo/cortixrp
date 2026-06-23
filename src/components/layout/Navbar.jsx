@@ -56,7 +56,7 @@ export default function Navbar() {
           aria-label="OutsetRP — strona główna"
           className="flex items-center"
         >
-          <img src="/logo.svg" alt="OutsetRP" className="h-11 w-auto" />
+          <img src="/logo.svg" alt="OutsetRP" className="h-14 w-auto" />
         </Link>
         <button
           onClick={() => setOpen(false)}
@@ -119,7 +119,7 @@ export default function Navbar() {
             }
           }}
         >
-          <img src="/logo.svg" alt="OutsetRP" className="h-11 w-auto" />
+          <img src="/logo.svg" alt="OutsetRP" className="h-14 w-auto" />
         </Link>
 
         <button
