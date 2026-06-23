@@ -66,6 +66,7 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+    canvas.style.display = '' // reset in case a previous mount hid it
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const quality = 0.6
@@ -73,7 +74,9 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
     const gl =
       canvas.getContext('webgl', { antialias: false, alpha: true, powerPreference: 'high-performance', preserveDrawingBuffer: false }) ||
       canvas.getContext('experimental-webgl')
-    if (!gl) return // CSS fallback mesh stays visible
+    // No WebGL (or context exhausted on rapid reloads): hide the canvas so the
+    // animated CSS .shader-fallback shows instead of a blank/white canvas.
+    if (!gl) { canvas.style.display = 'none'; return }
 
     let uRes = null, uTime = null, uDim = null
     let cw = 0, ch = 0
