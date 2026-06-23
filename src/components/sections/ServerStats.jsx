@@ -14,7 +14,7 @@ function Stat({ value, label, descriptor, delay = 0 }) {
       className="reveal border-l border-primary/10 px-10 first:border-l-0 first:pl-0 max-md:border-l-0 max-md:border-t max-md:px-0 max-md:py-8 max-md:text-center max-md:first:border-t-0 max-md:first:pt-0"
     >
       <div
-        className="font-mono text-[clamp(2.5rem,6vw,4.2rem)] font-bold leading-none tracking-[-0.04em] text-ink [font-variant-numeric:tabular-nums] [text-shadow:0_0_44px_oklch(0.66_0.18_248/0.35)]"
+        className="font-mono text-[clamp(2.5rem,6vw,4.2rem)] font-bold leading-none tracking-[-0.04em] text-ink [font-variant-numeric:tabular-nums] [text-shadow:0_0_44px_oklch(from_var(--color-primary)_l_c_h/0.35)]"
         aria-label={`${value.toLocaleString('pl-PL')} ${label}`}
       >
         {formatted}

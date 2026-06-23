@@ -2,8 +2,8 @@ const LAST_UPDATED = '4 czerwca 2025'
 const DISCORD_URL = 'https://discord.gg/'
 
 export const metadata = {
-  title: 'Polityka prywatności — CortixRP',
-  description: 'Polityka prywatności serwisu CortixRP.',
+  title: 'Polityka prywatności — OutsetRP',
+  description: 'Polityka prywatności serwisu OutsetRP.',
 }
 
 const TOC = [
@@ -19,7 +19,7 @@ const TOC = [
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen">
-      <header className="-mt-[72px] pb-16 pt-[10.5rem] [background:radial-gradient(ellipse_55%_70%_at_12%_60%,oklch(0.66_0.18_248/0.10),transparent_65%),radial-gradient(ellipse_35%_45%_at_85%_25%,oklch(0.82_0.15_208/0.06),transparent_55%)] max-sm:pb-10 max-sm:pt-[8.5rem]">
+      <header className="-mt-[72px] pb-16 pt-[10.5rem] [background:radial-gradient(ellipse_55%_70%_at_12%_60%,oklch(from_var(--color-primary)_l_c_h/0.10),transparent_65%),radial-gradient(ellipse_35%_45%_at_85%_25%,oklch(from_var(--color-glow)_l_c_h/0.06),transparent_55%)] max-sm:pb-10 max-sm:pt-[8.5rem]">
         <div className="mx-auto max-w-page px-8 min-[1921px]:max-w-wide max-sm:px-5">
           <span className="kicker">Dokument prawny</span>
           <h1 className="my-5 font-display text-[clamp(2.6rem,2rem+3.5vw,5rem)] font-extrabold leading-[0.98] tracking-[-0.025em] text-ink [font-stretch:118%]">
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
           </h1>
           <p className="font-mono text-sm text-ink-faint">
             Ostatnia aktualizacja: <time dateTime="2025-06-04">{LAST_UPDATED}</time>
-            &ensp;·&ensp; CortixRP
+            &ensp;·&ensp; OutsetRP
           </p>
         </div>
       </header>
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
             <h2><span className="privacy-num">01</span>Administrator danych</h2>
             <p>
               Administratorem danych przetwarzanych w związku z korzystaniem ze strony oraz serwera jest właściciel
-              projektu działający pod nazwą <strong>CortixRP</strong>. W sprawach dotyczących prywatności skontaktuj się
+              projektu działający pod nazwą <strong>OutsetRP</strong>. W sprawach dotyczących prywatności skontaktuj się
               z nami przez <a href={DISCORD_URL} target="_blank" rel="noreferrer">serwer Discord</a>.
             </p>
           </section>
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
           <section id="dane" className="privacy-section">
             <h2><span className="privacy-num">02</span>Zbierane dane</h2>
             <p>
-              Strona CortixRP nie prowadzi własnej rejestracji ani formularzy zbierających dane osobowe. Jedyne dane,
+              Strona OutsetRP nie prowadzi własnej rejestracji ani formularzy zbierających dane osobowe. Jedyne dane,
               jakie możemy pozyskać w związku z procesem dołączenia do serwera, to{' '}
               <strong>nazwa użytkownika Discord oraz publiczne ID konta Discord</strong>, podane dobrowolnie przez
               gracza podczas aplikacji whitelist.
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
           <section id="cookies" className="privacy-section">
             <h2><span className="privacy-num">04</span>Pliki cookie</h2>
             <p>
-              Strona CortixRP nie ustawia własnych plików cookie. Cloudflare może zapisać techniczne ciasteczka
+              Strona OutsetRP nie ustawia własnych plików cookie. Cloudflare może zapisać techniczne ciasteczka
               niezbędne do ochrony przed botami: <code>__cf_bm</code> oraz <code>cf_clearance</code>. Są to pliki
               niezbędne do działania usługi i nie wymagają Twojej zgody.
             </p>

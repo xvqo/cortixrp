@@ -1,4 +1,4 @@
-const BASE = 'https://cortixrp.pl'
+const BASE = 'https://outsetrp.pl'
 
 export default function sitemap() {
   const routes = ['', '/regulamin', '/dla-poczatkujacych', '/polityka-prywatnosci']

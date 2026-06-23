@@ -55,7 +55,7 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
           className="font-display text-xl font-extrabold uppercase tracking-tight text-ink [font-stretch:115%]"
         >
-          Cortix<span className="text-primary text-glow-shadow">RP</span>
+          Outset<span className="text-primary text-glow-shadow">RP</span>
         </Link>
         <button
           onClick={() => setOpen(false)}
@@ -117,7 +117,7 @@ export default function Navbar() {
             }
           }}
         >
-          Cortix<span className="text-primary text-glow-shadow">RP</span>
+          Outset<span className="text-primary text-glow-shadow">RP</span>
         </Link>
 
         <button
@@ -156,7 +156,7 @@ export default function Navbar() {
           href={DISCORD_URL}
           target="_blank"
           rel="noreferrer"
-          className="hidden rounded-md bg-primary px-5 py-2.5 text-sm font-bold text-bg transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-hover hover:shadow-[0_10px_30px_-10px_oklch(0.66_0.18_248/0.6)] lg:inline-flex"
+          className="hidden rounded-md bg-primary px-5 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-hover hover:shadow-[0_10px_30px_-10px_oklch(from_var(--color-primary)_l_c_h/0.6)] lg:inline-flex"
         >
           Discord
         </a>

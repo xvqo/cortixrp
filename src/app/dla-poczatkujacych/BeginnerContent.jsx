@@ -105,7 +105,7 @@ export default function BeginnerPage() {
         <section className="beginner-section">
           <h2 className="beginner-title">Jak dołączyć do serwera</h2>
           <p className="beginner-sub">
-            CortixRP działa na systemie whitelist: każdy gracz przechodzi krótką weryfikację.
+            OutsetRP działa na systemie whitelist: każdy gracz przechodzi krótką weryfikację.
             Rekrutacja odbywa się w otwartych okienkach, o których dowiesz się na Discordzie.
           </p>
 
@@ -117,7 +117,7 @@ export default function BeginnerPage() {
             <ol className="flex flex-col gap-9">
               {STEPS.map((step, i) => (
                 <li key={step.num} data-step={i} className="reveal relative flex gap-6 max-[480px]:gap-4">
-                  <div className="relative z-[1] flex h-[2.6rem] w-[2.6rem] shrink-0 items-center justify-center rounded-full border border-primary/40 bg-bg font-mono text-sm font-bold text-primary [box-shadow:0_0_26px_-6px_oklch(0.66_0.18_248/0.7)] max-[480px]:h-9 max-[480px]:w-9">
+                  <div className="relative z-[1] flex h-[2.6rem] w-[2.6rem] shrink-0 items-center justify-center rounded-full border border-primary/40 bg-bg font-mono text-sm font-bold text-primary [box-shadow:0_0_26px_-6px_oklch(from_var(--color-primary)_l_c_h/0.7)] max-[480px]:h-9 max-[480px]:w-9">
                     {step.num}
                   </div>
                   <div className="pt-1.5">
@@ -142,7 +142,7 @@ export default function BeginnerPage() {
               >
                 <span
                   aria-hidden="true"
-                  className="select-none font-display text-[3.5rem] font-extrabold leading-[0.8] text-transparent transition-colors duration-300 [-webkit-text-stroke:1.5px_oklch(0.66_0.18_248/0.45)] [font-stretch:120%] group-hover:text-primary group-hover:[text-shadow:0_0_28px_oklch(0.66_0.18_248/0.6)] max-[760px]:text-[2.8rem]"
+                  className="select-none font-display text-[3.5rem] font-extrabold leading-[0.8] text-transparent transition-colors duration-300 [-webkit-text-stroke:1.5px_oklch(from_var(--color-primary)_l_c_h/0.45)] [font-stretch:120%] group-hover:text-primary group-hover:[text-shadow:0_0_28px_oklch(from_var(--color-primary)_l_c_h/0.6)] max-[760px]:text-[2.8rem]"
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>

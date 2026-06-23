@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="mb-10 flex items-start justify-between gap-16 max-md:flex-col max-md:gap-8 max-[480px]:items-center max-[480px]:text-center">
           <div className="flex flex-col gap-4 max-[480px]:items-center">
             <Link href="/" className="font-display text-xl font-extrabold uppercase leading-none tracking-tight text-ink [font-stretch:115%]">
-              Cortix<span className="text-primary">RP</span>
+              Outset<span className="text-primary">RP</span>
             </Link>
             <p className="max-w-[34ch] text-sm leading-[1.65] text-ink-faint">
               Casualowy serwer roleplay na FiveM.<br />
@@ -50,7 +50,7 @@ export default function Footer() {
         <div className="mb-6 h-px bg-border" />
 
         <div className="flex flex-wrap items-center justify-between gap-6 max-md:flex-col max-md:items-start max-md:gap-2 max-[480px]:items-center max-[480px]:text-center">
-          <p className="whitespace-nowrap font-mono text-xs text-ink-faint">© {new Date().getFullYear()} CortixRP</p>
+          <p className="whitespace-nowrap font-mono text-xs text-ink-faint">© {new Date().getFullYear()} OutsetRP</p>
           <p className="flex-1 text-center text-xs text-ink-faint max-md:flex-none max-md:text-left max-[480px]:text-center">
             This server is not affiliated with or endorsed by Rockstar Games.
           </p>

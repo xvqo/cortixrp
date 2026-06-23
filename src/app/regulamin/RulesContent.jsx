@@ -131,8 +131,8 @@ export default function RulesPage() {
           <section id="1" data-chapter className="rules-section scroll-mt-24">
             <h2 className="rules-heading">Postanowienia ogólne</h2>
             <ol className="rules-list">
-              <Rule id="1.1">Regulamin jest własnością CortixRP i zabrania się jego kopiowania. CortixRP zastrzega sobie prawo do edycji regulaminu.</Rule>
-              <Rule id="1.2">Złożenie podania na stronie internetowej CortixRP jest równoznaczne z akceptacją regulaminu. Konta są własnością CortixRP — użytkownicy posiadają prawa do ich używania. W przypadku naruszenia regulaminu dostęp do konta może zostać odebrany.</Rule>
+              <Rule id="1.1">Regulamin jest własnością OutsetRP i zabrania się jego kopiowania. OutsetRP zastrzega sobie prawo do edycji regulaminu.</Rule>
+              <Rule id="1.2">Złożenie podania na stronie internetowej OutsetRP jest równoznaczne z akceptacją regulaminu. Konta są własnością OutsetRP — użytkownicy posiadają prawa do ich używania. W przypadku naruszenia regulaminu dostęp do konta może zostać odebrany.</Rule>
               <Rule id="1.3">Zakazuje się: <Tag>MetaGamingu (MG)</Tag> we wszystkich formach (stream sniping, sugerowanie się czatem, przebywanie na komunikatorze podczas rozgrywki), <Tag>PowerGamingu (PG)</Tag>, <Tag>Vehicle Deathmatchu (VDM)</Tag>, <Tag>Random Deathmatchu (RDM)</Tag>, <Tag>NinjaJackingu (NJ)</Tag>, <Tag>CopBaitingu (CB)</Tag>, <Tag>CombatLogu (CL)</Tag>, <Tag>RevengeKillingu (RK)</Tag>, wychodzenia z roli oraz nierealistycznych sytuacji.</Rule>
               <Rule id="1.4">Brak znajomości regulaminu nie zwalnia z jego przestrzegania.</Rule>
               <Rule id="1.5">Nieumiejętne korzystanie z czatu Local OOC (floodowanie, zbędne komentarze, śmieszki) jest traktowane jako wyjście z roli i karane banem.</Rule>
@@ -153,7 +153,7 @@ export default function RulesPage() {
               <Rule id="2.6">Posiadanie „kuzyna" (drugiej postaci) dostępne jest po 60 dniach stażu. Jedna z dwóch postaci musi być w służbach publicznych (LSPD lub EMS). Trzecia postać jest dostępna wyłącznie eventowo dla administracji. Zakazane jest przenoszenie pojazdów, pieniędzy ani przedmiotów między postaciami.</Rule>
               <Rule id="2.7">Zakazane jest używanie słów obraźliwych o podtekstach rasistowskich lub homofobicznych oraz propagowania ustrojów totalitarnych.</Rule>
               <Rule id="2.8">Stan upojenia alkoholowego lub odurzenia innymi środkami nie usprawiedliwia łamania regulaminu.</Rule>
-              <Rule id="2.9">Zakazuje się sprzedawania lub wypożyczania konta Steam posiadającego whitelist na CortixRP.</Rule>
+              <Rule id="2.9">Zakazuje się sprzedawania lub wypożyczania konta Steam posiadającego whitelist na OutsetRP.</Rule>
               <Rule id="2.10">Zakazuje się wyrzucania przedmiotów przez <code>/me</code> i <code>/do</code> — jeśli przedmiot jest w ekwipunku <code>[F2]</code>, faktycznie go posiadasz.</Rule>
               <Rule id="2.11">Zakazuje się używania imion i nazwisk sławnych osób lub fikcyjnych postaci niemożliwych w realnym świecie (np. Barack Obama, Hulk).</Rule>
               <Rule id="2.12">Każda inicjacja grupowa musi odbyć się słownie przez voice-chat przed oddaniem strzałów. Policja i zarejestrowane organizacje przestępcze mają przywilej inicjacji grupowej — wystarczy jedna osoba.</Rule>

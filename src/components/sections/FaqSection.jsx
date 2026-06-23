@@ -7,7 +7,7 @@ const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 const FAQS = [
   {
     q: 'Jak wygląda proces dołączenia do serwera?',
-    a: 'CortixRP działa na systemie whitelist. Dołącz na nasz Discord, zapoznaj się z regulaminem i wypełnij formularz aplikacyjny. Ekipa rozpatruje wnioski i po pozytywnej weryfikacji otrzymasz dostęp.',
+    a: 'OutsetRP działa na systemie whitelist. Dołącz na nasz Discord, zapoznaj się z regulaminem i wypełnij formularz aplikacyjny. Ekipa rozpatruje wnioski i po pozytywnej weryfikacji otrzymasz dostęp.',
   },
   {
     q: 'Ile czeka się na rozpatrzenie aplikacji?',
@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: 'Czy granie na serwerze jest płatne?',
-    a: 'Nie. Gra na CortixRP jest w pełni darmowa. Sklep z pakietami VIP istnieje wyłącznie jako dobrowolne wsparcie i nie daje żadnej przewagi w rozgrywce.',
+    a: 'Nie. Gra na OutsetRP jest w pełni darmowa. Sklep z pakietami VIP istnieje wyłącznie jako dobrowolne wsparcie i nie daje żadnej przewagi w rozgrywce.',
   },
   {
     q: 'Jaki sprzęt i oprogramowanie są potrzebne?',

@@ -8,28 +8,28 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
   (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
-  'https://cortixrp.pl'
+  'https://outsetrp.pl'
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'CortixRP — Serwer FiveM',
+  title: 'OutsetRP — Serwer FiveM',
   description:
-    'CortixRP to casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord, przejdź weryfikację i wskocz do Los Santos.',
+    'OutsetRP to casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord, przejdź weryfikację i wskocz do Los Santos.',
   icons: { icon: '/favicon.svg' },
   verification: { google: 'X91OcjHGhJup6yjiLG6xmwvXQZvVEELLlPa0zvzl78k' },
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    title: 'CortixRP — Serwer FiveM',
+    title: 'OutsetRP — Serwer FiveM',
     description:
       'Casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
     url: SITE_URL,
-    siteName: 'CortixRP',
+    siteName: 'OutsetRP',
     locale: 'pl_PL',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CortixRP — Serwer FiveM',
+    title: 'OutsetRP — Serwer FiveM',
     description: 'Casualowy serwer roleplay FiveM z systemem whitelist.',
   },
 }
@@ -60,21 +60,21 @@ export default function RootLayout({ children }) {
               '@graph': [
                 {
                   '@type': 'Organization',
-                  '@id': 'https://cortixrp.pl/#org',
-                  name: 'CortixRP',
-                  url: 'https://cortixrp.pl',
-                  logo: 'https://cortixrp.pl/favicon.svg',
+                  '@id': 'https://outsetrp.pl/#org',
+                  name: 'OutsetRP',
+                  url: 'https://outsetrp.pl',
+                  logo: 'https://outsetrp.pl/favicon.svg',
                   sameAs: ['https://discord.gg/CZEtYxkTDy'],
                 },
                 {
                   '@type': 'WebSite',
-                  '@id': 'https://cortixrp.pl/#website',
-                  name: 'CortixRP — Serwer FiveM',
-                  url: 'https://cortixrp.pl',
+                  '@id': 'https://outsetrp.pl/#website',
+                  name: 'OutsetRP — Serwer FiveM',
+                  url: 'https://outsetrp.pl',
                   inLanguage: 'pl-PL',
                   description:
                     'Casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
-                  publisher: { '@id': 'https://cortixrp.pl/#org' },
+                  publisher: { '@id': 'https://outsetrp.pl/#org' },
                 },
               ],
             }),

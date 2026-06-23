@@ -6,5 +6,5 @@ export const galleryImages = [
   { src: '/image6.png', alt: 'Codzienna rozgrywka w Los Santos', variant: 'medium' },
   { src: '/image7.png', alt: 'Widok na dzielnicę z drogi ekspresowej', variant: 'wide' },
   { src: '/image8.png', alt: 'Interakcja między postaciami', variant: 'wide' },
-  { src: '/image9.png', alt: 'Pełny widok serwera CortixRP', variant: 'full' },
+  { src: '/image9.png', alt: 'Pełny widok serwera OutsetRP', variant: 'full' },
 ]

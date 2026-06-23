@@ -38,10 +38,10 @@ void main(){
   vec2 q = vec2(fbm(p + vec2(0.0, t)), fbm(p + vec2(5.2, 1.3 - t)));
   vec2 r = vec2(fbm(p + 1.8*q + vec2(1.7, 9.2) + t*0.6), fbm(p + 1.8*q + vec2(8.3, 2.8) - t*0.45));
   float f = fbm(p + 2.0*r);
-  vec3 c1 = vec3(0.035, 0.075, 0.150);
-  vec3 c2 = vec3(0.075, 0.190, 0.420);
-  vec3 c3 = vec3(0.190, 0.540, 0.920);
-  vec3 c4 = vec3(0.360, 0.820, 1.000);
+  vec3 c1 = vec3(0.020, 0.035, 0.090);
+  vec3 c2 = vec3(0.055, 0.140, 0.400);
+  vec3 c3 = vec3(0.145, 0.388, 0.922);
+  vec3 c4 = vec3(0.400, 0.640, 0.980);
   vec3 col = mix(c1, c2, smoothstep(0.0, 0.7, f));
   col = mix(col, c3, smoothstep(0.42, 1.02, f + 0.35*r.x));
   col = mix(col, c4, smoothstep(0.78, 1.24, length(r) + 0.25*f));
