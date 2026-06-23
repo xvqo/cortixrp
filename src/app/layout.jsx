@@ -15,7 +15,7 @@ export const metadata = {
   title: 'OutsetRP — Serwer FiveM',
   description:
     'OutsetRP to casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord, przejdź weryfikację i wskocz do Los Santos.',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/logo.svg', apple: '/logo.svg' },
   verification: { google: 'X91OcjHGhJup6yjiLG6xmwvXQZvVEELLlPa0zvzl78k' },
   alternates: { canonical: '/' },
   openGraph: {
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
                   '@id': 'https://outsetrp.pl/#org',
                   name: 'OutsetRP',
                   url: 'https://outsetrp.pl',
-                  logo: 'https://outsetrp.pl/favicon.svg',
+                  logo: 'https://outsetrp.pl/logo.svg',
                   sameAs: ['https://discord.gg/CZEtYxkTDy'],
                 },
                 {
