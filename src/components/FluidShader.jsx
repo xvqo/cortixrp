@@ -30,7 +30,7 @@ float noise(vec2 p){
   vec2 u = f*f*(3.-2.*f);
   return mix(a,b,u.x) + (c-a)*u.y*(1.-u.x) + (d-b)*u.x*u.y;
 }
-float fbm(vec2 p){ float v=0.0,a=0.55; for(int i=0;i<5;i++){ v+=a*noise(p); p*=2.02; a*=0.5; } return v; }
+float fbm(vec2 p){ float v=0.0,a=0.55; for(int i=0;i<4;i++){ v+=a*noise(p); p*=2.03; a*=0.5; } return v; }
 void main(){
   vec2 uv = gl_FragCoord.xy / u_res.xy;
   vec2 p = uv; p.x *= u_res.x / u_res.y;
@@ -69,7 +69,7 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
     canvas.style.display = '' // reset in case a previous mount hid it
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const quality = 0.6
+    const quality = 0.5
 
     const gl =
       canvas.getContext('webgl', { antialias: false, alpha: true, powerPreference: 'high-performance', preserveDrawingBuffer: false }) ||
@@ -109,7 +109,7 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
     }
 
     function syncSize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5)
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.25)
       const rect = canvas.getBoundingClientRect()
       const w = Math.max(1, Math.floor(rect.width * dpr * quality))
       const h = Math.max(1, Math.floor(rect.height * dpr * quality))
@@ -120,11 +120,13 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
       gl.uniform2f(uRes, w, h)
     }
 
+    let shown = false
     function render(timeSec) {
       if (gl.isContextLost()) return
       syncSize()
       gl.uniform1f(uTime, timeSec)
       gl.drawArrays(gl.TRIANGLES, 0, 3)
+      if (!shown) { shown = true; canvas.style.opacity = '1' } // elegant fade-in once painted
     }
 
     function loop(now) {

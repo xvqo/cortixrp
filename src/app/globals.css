@@ -180,7 +180,8 @@
   .kicker::before { content: ''; width: 22px; height: 1px; background: linear-gradient(to right, var(--color-glow), transparent); }
 
   /* ── Shader primitives ── */
-  .shader-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 0; background: var(--color-bg); }
+  .shader-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 0; background: var(--color-bg); opacity: 0; transition: opacity 0.8s ease-out; }
+  @media (prefers-reduced-motion: reduce) { .shader-canvas { transition: none; } }
   .shader-fallback {
     position: absolute; inset: -20%; z-index: 0; pointer-events: none;
     background:
