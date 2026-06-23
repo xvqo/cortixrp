@@ -16,11 +16,8 @@ export default function Footer() {
 
         <div className="mb-10 flex items-start justify-between gap-16 max-md:flex-col max-md:gap-8 max-[480px]:items-center max-[480px]:text-center">
           <div className="flex flex-col gap-4 max-[480px]:items-center">
-            <Link href="/" className="flex items-center gap-2.5">
-              <img src="/logo.svg" alt="" aria-hidden="true" className="h-8 w-8 shrink-0" />
-              <span className="font-display text-xl font-extrabold uppercase leading-none tracking-tight text-ink [font-stretch:115%]">
-                Outset<span className="text-primary">RP</span>
-              </span>
+            <Link href="/" aria-label="OutsetRP — strona główna" className="flex items-center">
+              <img src="/logo.svg" alt="OutsetRP" className="h-12 w-auto" />
             </Link>
             <p className="max-w-[34ch] text-sm leading-[1.65] text-ink-faint">
               Casualowy serwer roleplay na FiveM.<br />

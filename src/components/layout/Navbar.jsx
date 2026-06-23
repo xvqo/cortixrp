@@ -53,12 +53,10 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="flex items-center gap-2.5"
+          aria-label="OutsetRP — strona główna"
+          className="flex items-center"
         >
-          <img src="/logo.svg" alt="OutsetRP" className="h-9 w-9 shrink-0" />
-          <span className="font-display text-xl font-extrabold uppercase tracking-tight text-ink [font-stretch:115%]">
-            Outset<span className="text-primary text-glow-shadow">RP</span>
-          </span>
+          <img src="/logo.svg" alt="OutsetRP" className="h-11 w-auto" />
         </Link>
         <button
           onClick={() => setOpen(false)}
@@ -111,7 +109,8 @@ export default function Navbar() {
       <div className="relative z-10 mx-auto flex h-[72px] max-w-page items-center gap-8 px-8 min-[1921px]:max-w-wide max-md:px-6">
         <Link
           href="/"
-          className="mr-auto flex items-center gap-2.5"
+          aria-label="OutsetRP — strona główna"
+          className="mr-auto flex items-center"
           onClick={(e) => {
             if (pathname === '/') {
               e.preventDefault()
@@ -120,10 +119,7 @@ export default function Navbar() {
             }
           }}
         >
-          <img src="/logo.svg" alt="OutsetRP" className="h-9 w-9 shrink-0" />
-          <span className="font-display text-xl font-extrabold uppercase tracking-tight text-ink [font-stretch:115%]">
-            Outset<span className="text-primary text-glow-shadow">RP</span>
-          </span>
+          <img src="/logo.svg" alt="OutsetRP" className="h-11 w-auto" />
         </Link>
 
         <button
