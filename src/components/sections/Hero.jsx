@@ -8,7 +8,7 @@ const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 export default function Hero() {
   const [players, setPlayers] = useState(null)
-  const [status, setStatus] = useState('loading') // 'loading' | 'online' | 'offline'
+  const [status, setStatus] = useState('loading') // 'loading' | 'online' | 'offline' | 'unknown'
   const charRef = useRef(null)
   const contentRef = useRef(null)
 
@@ -19,16 +19,20 @@ export default function Hero() {
       .then((r) => r.json())
       .then((d) => {
         if (!alive) return
-        if (d && d.online && typeof d.players === 'number') {
-          setPlayers(d.players)
+        if (d?.status === 'online') {
+          if (typeof d.players === 'number') setPlayers(d.players)
           setStatus('online')
-        } else {
+        } else if (d?.status === 'offline') {
           setStatus('offline')
+        } else {
+          setStatus('unknown') // API unreachable/blocked: assume up, just no count
         }
       })
-      .catch(() => { if (alive) setStatus('offline') })
+      .catch(() => { if (alive) setStatus('unknown') })
     return () => { alive = false }
   }, [])
+
+  const isUp = status === 'online' || status === 'unknown'
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -76,7 +80,7 @@ export default function Hero() {
         >
           <span
             className={`inline-block h-2 w-2 shrink-0 rounded-full ${
-              status === 'online'
+              isUp
                 ? 'bg-online [animation:dotPulse_2.6s_ease-in-out_infinite]'
                 : status === 'offline'
                   ? 'bg-ink-faint'
@@ -84,14 +88,14 @@ export default function Hero() {
             }`}
           />
           <span>
-            {status === 'online' && (
+            {status === 'loading' && 'Sprawdzanie statusu'}
+            {status === 'offline' && 'Serwer offline'}
+            {isUp && (
               <>
                 Serwer online
                 {players !== null && <span className="text-glow">&nbsp;·&nbsp;{players} graczy</span>}
               </>
             )}
-            {status === 'offline' && 'Serwer offline'}
-            {status === 'loading' && 'Sprawdzanie statusu'}
           </span>
         </div>
 
