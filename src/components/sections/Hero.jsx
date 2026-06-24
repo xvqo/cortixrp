@@ -8,16 +8,25 @@ const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 export default function Hero() {
   const [players, setPlayers] = useState(null)
+  const [status, setStatus] = useState('loading') // 'loading' | 'online' | 'offline'
   const charRef = useRef(null)
   const contentRef = useRef(null)
 
-  // Live player count from the FiveM server (via /api/players)
+  // Live server status + player count from the FiveM server (via /api/players)
   useEffect(() => {
     let alive = true
     fetch('/api/players')
       .then((r) => r.json())
-      .then((d) => { if (alive && typeof d.players === 'number') setPlayers(d.players) })
-      .catch(() => {})
+      .then((d) => {
+        if (!alive) return
+        if (d && d.online && typeof d.players === 'number') {
+          setPlayers(d.players)
+          setStatus('online')
+        } else {
+          setStatus('offline')
+        }
+      })
+      .catch(() => { if (alive) setStatus('offline') })
     return () => { alive = false }
   }, [])
 
@@ -61,13 +70,28 @@ export default function Hero() {
         className="relative z-[4] mx-auto w-full max-w-page px-8 py-[clamp(3rem,7vh,5rem)] min-[1921px]:max-w-wide max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center max-md:px-6 max-[480px]:px-5"
       >
         <div
+          role="status"
           className="mb-6 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-mono text-xs uppercase tracking-wider text-ink-muted backdrop-blur animate-rise"
           style={{ animationDelay: '0.26s' }}
         >
-          <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-online [animation:dotPulse_2.6s_ease-in-out_infinite]" />
+          <span
+            className={`inline-block h-2 w-2 shrink-0 rounded-full ${
+              status === 'online'
+                ? 'bg-online [animation:dotPulse_2.6s_ease-in-out_infinite]'
+                : status === 'offline'
+                  ? 'bg-ink-faint'
+                  : 'bg-ink-faint animate-pulse'
+            }`}
+          />
           <span>
-            Serwer online
-            {players !== null && <span className="text-glow">&nbsp;·&nbsp;{players} graczy</span>}
+            {status === 'online' && (
+              <>
+                Serwer online
+                {players !== null && <span className="text-glow">&nbsp;·&nbsp;{players} graczy</span>}
+              </>
+            )}
+            {status === 'offline' && 'Serwer offline'}
+            {status === 'loading' && 'Sprawdzanie statusu'}
           </span>
         </div>
 
