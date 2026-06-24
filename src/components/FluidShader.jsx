@@ -131,9 +131,15 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
       if (!shown) { shown = true; canvas.style.opacity = '1' } // elegant fade-in once painted
     }
 
+    // Cap to ~30fps: the fluid drifts slowly, so half the frames look identical
+    // while halving main-thread/GPU work (better TBT).
+    const frameInterval = 1000 / 30
+    let lastT = -Infinity
     function loop(now) {
       raf = requestAnimationFrame(loop)
       if (!onScreen || document.hidden || gl.isContextLost()) return
+      if (now - lastT < frameInterval) return
+      lastT = now
       render((now - start) / 1000)
     }
 
@@ -171,10 +177,21 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
     })
     ro.observe(canvas)
 
-    startRendering()
+    // Defer animation start until the browser is idle, so the shader doesn't
+    // compete for the main thread during initial load (lowers TBT). The canvas
+    // keeps its dark CSS background until then, then fades in.
+    let idleId = 0
+    if (reduced) {
+      startRendering()
+    } else {
+      const ric = window.requestIdleCallback || ((cb) => setTimeout(cb, 700))
+      idleId = ric(() => startRendering(), { timeout: 1500 })
+    }
 
     return () => {
       cancelAnimationFrame(raf)
+      if (window.cancelIdleCallback && idleId) window.cancelIdleCallback(idleId)
+      clearTimeout(idleId)
       io.disconnect()
       if (ro) ro.disconnect()
       canvas.removeEventListener('webglcontextlost', onLost)
