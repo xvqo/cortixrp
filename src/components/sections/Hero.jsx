@@ -1,16 +1,25 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import FluidShader from '@/components/FluidShader'
-import { useServerStats } from '@/hooks/useServerStats'
 
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 export default function Hero() {
-  const { stats } = useServerStats()
+  const [players, setPlayers] = useState(null)
   const charRef = useRef(null)
   const contentRef = useRef(null)
+
+  // Live player count from the FiveM server (via /api/players)
+  useEffect(() => {
+    let alive = true
+    fetch('/api/players')
+      .then((r) => r.json())
+      .then((d) => { if (alive && typeof d.players === 'number') setPlayers(d.players) })
+      .catch(() => {})
+    return () => { alive = false }
+  }, [])
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -58,7 +67,7 @@ export default function Hero() {
           <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-online [animation:dotPulse_2.6s_ease-in-out_infinite]" />
           <span>
             Serwer online
-            {stats && <span className="text-glow">&nbsp;·&nbsp;{stats.playersOnline} graczy</span>}
+            {players !== null && <span className="text-glow">&nbsp;·&nbsp;{players} graczy</span>}
           </span>
         </div>
 

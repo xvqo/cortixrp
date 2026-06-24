@@ -13,10 +13,10 @@
   --color-surface-2:      oklch(0.235 0.040 264);
   --color-border:         oklch(0.310 0.045 264);
 
-  --color-primary:        oklch(0.55 0.22 264);   /* #2563EB */
-  --color-primary-hover:  oklch(0.63 0.20 262);   /* brighter blue for hover feedback */
-  --color-primary-subtle: oklch(0.30 0.12 264);
-  --color-glow:           oklch(0.72 0.15 256);   /* light blue accent */
+  --color-primary:        oklch(0.55 0.22 264);    /* #2563EB */
+  --color-primary-hover:  oklch(0.66 0.19 268);    /* lifts toward periwinkle */
+  --color-primary-subtle: oklch(0.36 0.155 263);   /* #133A94 deep accent */
+  --color-glow:           oklch(0.745 0.155 278);  /* #919BFF periwinkle accent */
 
   --color-ink:            oklch(0.99 0.006 255);  /* ~#FFFFFF */
   --color-ink-muted:      oklch(0.74 0.030 258);
@@ -186,7 +186,7 @@
     position: absolute; inset: -20%; z-index: 0; pointer-events: none;
     background:
       radial-gradient(40% 50% at 25% 30%, oklch(0.50 0.18 264 / 0.5), transparent 70%),
-      radial-gradient(45% 45% at 78% 35%, oklch(0.66 0.14 256 / 0.34), transparent 70%),
+      radial-gradient(45% 45% at 78% 35%, oklch(0.745 0.155 278 / 0.34), transparent 70%),
       radial-gradient(50% 55% at 55% 80%, oklch(0.40 0.14 256 / 0.5), transparent 72%),
       var(--color-bg);
     filter: blur(40px) saturate(1.05);
@@ -240,7 +240,7 @@
   }
   .cta-aurora span:nth-child(2) {
     width: 40vw; height: 40vw; max-width: 560px; max-height: 560px; right: 0; top: -8%;
-    background: radial-gradient(circle, oklch(0.72 0.15 256 / 0.42), transparent 64%);
+    background: radial-gradient(circle, oklch(0.745 0.155 278 / 0.42), transparent 64%);
     animation: auroraB 23s ease-in-out infinite;
   }
   .cta-aurora span:nth-child(3) {
@@ -470,7 +470,7 @@
   .privacy-section ul { list-style: none; margin: 1.25rem 0; display: flex; flex-direction: column; gap: 0.75rem; padding-left: 1rem; border-left: 2px solid oklch(from var(--color-primary) l c h / 0.3); }
   .privacy-section li { font-size: var(--text-base); color: var(--color-ink-muted); line-height: 1.65; }
   .privacy-section strong { color: var(--color-ink); font-weight: 600; }
-  .privacy-section a { color: var(--color-glow); transition: color 0.2s ease-out; text-decoration: underline; text-decoration-color: oklch(0.72 0.15 256 / 0.4); text-underline-offset: 3px; }
+  .privacy-section a { color: var(--color-glow); transition: color 0.2s ease-out; text-decoration: underline; text-decoration-color: oklch(0.745 0.155 278 / 0.4); text-underline-offset: 3px; }
   .privacy-section a:hover { color: var(--color-ink); }
   .privacy-section code { font-family: var(--font-mono); font-size: 0.85em; background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-ink); padding: 0.15em 0.45em; border-radius: var(--radius-sm); margin: 0 0.1em; }
   @media (max-width: 900px) { .privacy-toc { display: none; } }

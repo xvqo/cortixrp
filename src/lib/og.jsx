@@ -25,11 +25,11 @@ export function ogImage({
           position: 'relative',
         }}
       >
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 6, display: 'flex', background: 'linear-gradient(90deg, #2563EB, #60A5FA)' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 6, display: 'flex', background: 'linear-gradient(90deg, #2563EB, #919BFF)' }} />
         <div style={{ position: 'absolute', top: -220, right: -180, width: 680, height: 680, display: 'flex', background: 'radial-gradient(circle, rgba(37,99,235,0.45), rgba(10,14,26,0) 70%)' }} />
-        <div style={{ position: 'absolute', bottom: -260, left: -140, width: 600, height: 600, display: 'flex', background: 'radial-gradient(circle, rgba(96,165,250,0.20), rgba(10,14,26,0) 70%)' }} />
+        <div style={{ position: 'absolute', bottom: -260, left: -140, width: 600, height: 600, display: 'flex', background: 'radial-gradient(circle, rgba(145,155,255,0.20), rgba(10,14,26,0) 70%)' }} />
 
-        <div style={{ display: 'flex', alignItems: 'center', fontSize: 26, letterSpacing: 8, textTransform: 'uppercase', color: '#60A5FA' }}>
+        <div style={{ display: 'flex', alignItems: 'center', fontSize: 26, letterSpacing: 8, textTransform: 'uppercase', color: '#919BFF' }}>
           {eyebrow}
         </div>
 
