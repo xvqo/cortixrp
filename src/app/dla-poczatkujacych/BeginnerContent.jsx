@@ -9,7 +9,7 @@ const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 const STEPS = [
   { num: '01', title: 'Wejdź na Discord', desc: 'To centrum całej społeczności. Znajdziesz tam ogłoszenia, kanały tematyczne i bezpośredni kontakt z ekipą.' },
   { num: '02', title: 'Przeczytaj regulamin', desc: 'Poznaj zasady w kanale #regulamin. Ich znajomość sprawdzimy podczas krótkiej rozmowy, więc nie pomijaj tego kroku.' },
-  { num: '03', title: 'Złap otwarte okienko', desc: 'Nabór rusza w ustalonych terminach. Śledź kanał #ogłoszenia, tam pojawiają się wolne miejsca.' },
+  { num: '03', title: 'Złap otwarte okienko', desc: 'Rekrutacja rusza w ustalonych terminach. Śledź kanał #ogłoszenia, tam pojawiają się wolne miejsca.' },
   { num: '04', title: 'Wbij na kanał głosowy', desc: 'Gdy nabór jest otwarty, dołącz na wskazany kanał. Wcześniej sprawdź, czy mikrofon działa.' },
   { num: '05', title: 'Porozmawiaj z ekipą', desc: 'Krótka rozmowa, nie egzamin. Sprawdzamy, czy znasz zasady i czujesz klimat gry.' },
 ]
@@ -106,7 +106,7 @@ export default function BeginnerPage() {
           <h2 className="beginner-title">Jak dołączyć do serwera</h2>
           <p className="beginner-sub">
             OutsetRP działa na systemie whitelist: każdy gracz przechodzi krótką weryfikację.
-            Nabór rusza w otwartych okienkach, o których dowiesz się na Discordzie.
+            Rekrutacja odbywa się w otwartych okienkach, o których dowiesz się na Discordzie.
           </p>
 
           <div className="relative mt-2">
@@ -175,7 +175,7 @@ export default function BeginnerPage() {
         <div className="beginner-cta">
           <div className="beginner-cta-content">
             <h2>Gotowy na Los Santos?</h2>
-            <p>Dołącz na Discord, śledź ogłoszenia i złap wolne okienko naboru.</p>
+            <p>Dołącz na Discord, śledź ogłoszenia i złap wolne okienko rekrutacji.</p>
           </div>
           <div className="beginner-cta-actions">
             <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn-primary">Dołącz na Discord</a>
