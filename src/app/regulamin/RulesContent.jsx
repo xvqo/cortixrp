@@ -19,7 +19,7 @@ function Rule({ id, children }) {
 const CHAPTERS = [
   { id: '1', n: '01', label: 'Postanowienia ogólne' },
   { id: '2', n: '02', label: 'Zasady ogólne' },
-  { id: '3', n: '03', label: 'Rządowy (Discord)' },
+  { id: '3', n: '03', label: 'Pomoc (Discord)' },
   { id: '4', n: '04', label: 'Rozgrywka' },
   { id: '5', n: '05', label: 'Zdrowie i amnezja' },
   { id: '6', n: '06', label: 'Przestępstwa' },
@@ -88,7 +88,7 @@ export default function RulesPage() {
           <dl className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-primary/15 pt-6 font-mono text-xs uppercase tracking-[0.12em] text-ink-faint max-lg:justify-center">
             <div className="flex items-center gap-2">
               <dt>Aktualizacja</dt>
-              <dd className="text-glow">15.06.2026</dd>
+              <dd className="text-glow">24.06.2026</dd>
             </div>
             <span className="text-primary/30" aria-hidden="true">/</span>
             <div className="flex items-center gap-2">
@@ -98,7 +98,7 @@ export default function RulesPage() {
             <span className="text-primary/30" aria-hidden="true">/</span>
             <div className="flex items-center gap-2">
               <dt className="sr-only">Czas czytania</dt>
-              <dd className="text-ink-muted">~8 min czytania</dd>
+              <dd className="text-ink-muted">~7 min czytania</dd>
             </div>
           </dl>
         </div>
@@ -132,13 +132,11 @@ export default function RulesPage() {
             <h2 className="rules-heading">Postanowienia ogólne</h2>
             <ol className="rules-list">
               <Rule id="1.1">Regulamin jest własnością OutsetRP i zabrania się jego kopiowania. OutsetRP zastrzega sobie prawo do edycji regulaminu.</Rule>
-              <Rule id="1.2">Złożenie podania na stronie internetowej OutsetRP jest równoznaczne z akceptacją regulaminu. Konta są własnością OutsetRP, a użytkownicy posiadają prawa do ich używania. W przypadku naruszenia regulaminu dostęp do konta może zostać odebrany.</Rule>
-              <Rule id="1.3">Zakazuje się: <Tag>MetaGamingu (MG)</Tag> we wszystkich formach (stream sniping, sugerowanie się czatem, przebywanie na komunikatorze podczas rozgrywki), <Tag>PowerGamingu (PG)</Tag>, <Tag>Vehicle Deathmatchu (VDM)</Tag>, <Tag>Random Deathmatchu (RDM)</Tag>, <Tag>NinjaJackingu (NJ)</Tag>, <Tag>CopBaitingu (CB)</Tag>, <Tag>CombatLogu (CL)</Tag>, <Tag>RevengeKillingu (RK)</Tag>, wychodzenia z roli oraz nierealistycznych sytuacji.</Rule>
-              <Rule id="1.4">Brak znajomości regulaminu nie zwalnia z jego przestrzegania.</Rule>
-              <Rule id="1.5">Nieumiejętne korzystanie z czatu Local OOC (floodowanie, zbędne komentarze, śmieszki) jest traktowane jako wyjście z roli i karane banem.</Rule>
-              <Rule id="1.6">Podczas gry niezbędna jest wiedza o klawiszach. Kanał <code>#klawiszologia</code> znajduje się na naszym Discordzie.</Rule>
-              <Rule id="1.7">Administrator ma prawo karać za czyny nieuwzględnione w regulaminie, jeśli uzna to za słuszne, łącznie z permanentnym banem bez podania przyczyny. Decyzja administracji jest ostateczna.</Rule>
-              <Rule id="1.8">Złożenie aplikacji jest równoznaczne z akceptacją regulaminu.</Rule>
+              <Rule id="1.2">Zakazuje się: <Tag>MetaGamingu (MG)</Tag> we wszystkich formach (stream sniping, sugerowanie się czatem, przebywanie na komunikatorze podczas rozgrywki), <Tag>PowerGamingu (PG)</Tag>, <Tag>Vehicle Deathmatchu (VDM)</Tag>, <Tag>Random Deathmatchu (RDM)</Tag>, <Tag>NinjaJackingu (NJ)</Tag>, <Tag>CopBaitingu (CB)</Tag>, <Tag>CombatLogu (CL)</Tag>, <Tag>RevengeKillingu (RK)</Tag>, wychodzenia z roli oraz nierealistycznych sytuacji.</Rule>
+              <Rule id="1.3">Brak znajomości regulaminu nie zwalnia z jego przestrzegania.</Rule>
+              <Rule id="1.4">Nieumiejętne korzystanie z czatu Local OOC (floodowanie, zbędne komentarze, śmieszki) jest traktowane jako wyjście z roli i karane banem.</Rule>
+              <Rule id="1.5">Podczas gry niezbędna jest wiedza o klawiszach. Kanał <code>#klawiszologia</code> znajduje się na naszym Discordzie.</Rule>
+              <Rule id="1.6">Administrator ma prawo karać za czyny nieuwzględnione w regulaminie, jeśli uzna to za słuszne, łącznie z permanentnym banem bez podania przyczyny. Decyzja administracji jest ostateczna.</Rule>
             </ol>
           </section>
 
@@ -150,24 +148,22 @@ export default function RulesPage() {
               <Rule id="2.3">Zakazuje się transakcji między graczami poza serwerem. Administracja nie ponosi odpowiedzialności za straty wynikłe z takich działań.</Rule>
               <Rule id="2.4">Zakazuje się posiadania reklam stron trzecich lub własnych w nazwie użytkownika, w tym platform streamingowych.</Rule>
               <Rule id="2.5">Zakaz używania klawisza <code>[Z]</code> bez potrzeby. Służy wyłącznie do odczytania ID gracza w celu zgłoszenia go administracji.</Rule>
-              <Rule id="2.6">Posiadanie „kuzyna" (drugiej postaci) dostępne jest po 60 dniach stażu. Jedna z dwóch postaci musi być w służbach publicznych (LSPD lub EMS). Trzecia postać jest dostępna wyłącznie eventowo dla administracji. Zakazane jest przenoszenie pojazdów, pieniędzy ani przedmiotów między postaciami.</Rule>
-              <Rule id="2.7">Zakazane jest używanie słów obraźliwych o podtekstach rasistowskich lub homofobicznych oraz propagowania ustrojów totalitarnych.</Rule>
-              <Rule id="2.8">Stan upojenia alkoholowego lub odurzenia innymi środkami nie usprawiedliwia łamania regulaminu.</Rule>
-              <Rule id="2.9">Zakazuje się sprzedawania lub wypożyczania konta Steam posiadającego whitelist na OutsetRP.</Rule>
-              <Rule id="2.10">Zakazuje się wyrzucania przedmiotów przez <code>/me</code> i <code>/do</code>. Jeśli przedmiot jest w ekwipunku <code>[F2]</code>, faktycznie go posiadasz.</Rule>
-              <Rule id="2.11">Zakazuje się używania imion i nazwisk sławnych osób lub fikcyjnych postaci niemożliwych w realnym świecie (np. Barack Obama, Hulk).</Rule>
-              <Rule id="2.12">Każda inicjacja grupowa musi odbyć się słownie przez voice-chat przed oddaniem strzałów. Policja i zarejestrowane organizacje przestępcze mają przywilej inicjacji grupowej: wystarczy jedna osoba.</Rule>
-              <Rule id="2.13">Skucie kajdankami może nastąpić tylko gdy osoba ma podniesione ręce. Jeśli odmawia, należy ją najpierw powalić dostępnymi środkami (np. taser, nie <Tag>BW</Tag>), a następnie skuć.</Rule>
-              <Rule id="2.14">Całkowity zakaz używania komend <code>/register</code>, <code>/skin</code>, <code>/chardel</code> bez zgody administracji.</Rule>
+              <Rule id="2.6">Zakazane jest używanie słów obraźliwych o podtekstach rasistowskich lub homofobicznych oraz propagowania ustrojów totalitarnych.</Rule>
+              <Rule id="2.7">Stan upojenia alkoholowego lub odurzenia innymi środkami nie usprawiedliwia łamania regulaminu.</Rule>
+              <Rule id="2.8">Zakazuje się sprzedawania lub wypożyczania konta Steam posiadającego whitelist na OutsetRP.</Rule>
+              <Rule id="2.9">Zakazuje się wyrzucania przedmiotów przez <code>/me</code> i <code>/do</code>. Jeśli przedmiot jest w ekwipunku <code>[F2]</code>, faktycznie go posiadasz.</Rule>
+              <Rule id="2.10">Zakazuje się używania imion i nazwisk sławnych osób lub fikcyjnych postaci niemożliwych w realnym świecie (np. Barack Obama, Hulk).</Rule>
+              <Rule id="2.11">Każda inicjacja grupowa musi odbyć się słownie przez voice-chat przed oddaniem strzałów. Policja i zarejestrowane organizacje przestępcze mają przywilej inicjacji grupowej: wystarczy jedna osoba.</Rule>
+              <Rule id="2.12">Skucie kajdankami może nastąpić tylko gdy osoba ma podniesione ręce. Jeśli odmawia, należy ją najpierw powalić dostępnymi środkami (np. taser, nie <Tag>BW</Tag>), a następnie skuć.</Rule>
             </ol>
           </section>
 
           <section id="3" data-chapter className="rules-section scroll-mt-24">
-            <h2 className="rules-heading">Rządowy (Discord)</h2>
+            <h2 className="rules-heading">Pomoc (Discord)</h2>
             <ol className="rules-list">
-              <Rule id="3.1">Tylko administrator może wezwać gracza na kanał „Mam sprawę". Gracz ma obowiązek stawić się niezwłocznie po zakończeniu trwającej akcji.</Rule>
-              <Rule id="3.2">Podczas streamów lub nagrań rozmów na „rządowym" należy wyciszyć mikrofon, każdy ma prawo do prywatności. Niestosowanie się skutkuje usunięciem z kanału lub banem.</Rule>
-              <Rule id="3.3">Gracz oskarżający inną osobę na rządowym musi posiadać dowody w postaci nagrań lub screenshotów.</Rule>
+              <Rule id="3.1">Tylko administrator może wezwać gracza na kanał „poczekalnia". Gracz ma obowiązek stawić się niezwłocznie po zakończeniu trwającej akcji.</Rule>
+              <Rule id="3.2">Podczas streamów lub nagrań rozmów na kanałach pomocy należy wyciszyć mikrofon, każdy ma prawo do prywatności. Niestosowanie się skutkuje usunięciem z kanału lub banem.</Rule>
+              <Rule id="3.3">Gracz oskarżający inną osobę na kanale pomocy musi posiadać dowody w postaci nagrań lub screenshotów.</Rule>
               <Rule id="3.4">Nick na Discordzie musi być identyczny z nickiem na Steamie. Niezgodność może skutkować banem.</Rule>
             </ol>
           </section>
@@ -179,20 +175,19 @@ export default function RulesPage() {
               <Rule id="4.2">Narracja prowadzona jest przez komendy <code>/me</code> i <code>/do</code>. Na <code>/do</code> obowiązuje wyłącznie prawda, kłamstwo jest karane.</Rule>
               <Rule id="4.3">Nie można rozpoznać osoby, która jest zamaskowana i zmienia głos.</Rule>
               <Rule id="4.4">Dozwolone jest latanie helikopterem przez „zwykłych obywateli" w trakcie rozbudowanej akcji RP, z wyjątkiem napadów helikopterem.</Rule>
-              <Rule id="4.5">Każde nagranie IC wymaga włączonej kamery GoPro. Po zakończeniu należy odegrać zgranie karty SD na dysk w mieszkaniu. Nagrań nie można wrzucać do chmury ani podłączać kamery pod telefon. Naciąganie tego punktu to <Tag>PG</Tag>.</Rule>
-              <Rule id="4.6">Czat głosowy służy wyłącznie do odgrywania sytuacji RP własnym głosem. Puszczanie audiobooków lub nadużywanie bindów i muzyki jest karane banem. Wyjątek: zgoda administracji lub modulator używany wyłącznie do rozmowy telefonicznej.</Rule>
-              <Rule id="4.7">Zabrania się akcji RP na tle seksualnym bez zgody drugiej osoby.</Rule>
+              <Rule id="4.5">Czat głosowy służy wyłącznie do odgrywania sytuacji RP własnym głosem. Puszczanie audiobooków lub nadużywanie bindów i muzyki jest karane banem. Wyjątek: zgoda administracji lub modulator używany wyłącznie do rozmowy telefonicznej.</Rule>
+              <Rule id="4.6">Zabrania się akcji RP na tle seksualnym bez zgody drugiej osoby.</Rule>
             </ol>
           </section>
 
           <section id="5" data-chapter className="rules-section scroll-mt-24">
-            <h2 className="rules-heading">Szacunek do zdrowia i życia & Amnezja</h2>
+            <h2 className="rules-heading">Szacunek do zdrowia i życia oraz Amnezja</h2>
             <ol className="rules-list">
               <Rule id="5.1">W przypadku zauważenia zagrożenia dla swojej postaci należy oddalić się i odgrywać ból oraz strach adekwatnie do sytuacji.</Rule>
               <Rule id="5.2">Po udzieleniu pierwszej pomocy, zwłaszcza po postrzale, należy jak najszybciej udać się do szpitala. Zbyt długa zwłoka może skutkować trwałym uszczerbkiem lub śmiercią postaci, uznanym za <Tag>FailRP</Tag>.</Rule>
-              <Rule id="5.3">Przebywając w szpitalu jako poszkodowany, gracz ma obowiązek odegrać pełną akcję RP z medykiem. Unikanie lub AFK bez zgody personelu medycznego podlega banie.</Rule>
+              <Rule id="5.3">Przebywając w szpitalu jako poszkodowany, gracz ma obowiązek odegrać pełną akcję RP z medykiem. Unikanie lub AFK bez zgody personelu medycznego podlega banowi.</Rule>
               <Rule id="5.4">Po stanie <Tag>BW</Tag> postać zapomina całą akcję, która do niego doprowadziła.</Rule>
-              <Rule id="5.6">Wyłącznie szef zarejestrowanej organizacji przestępczej może wymusić amnezję osobie będącej w stanie <Tag>BW</Tag> (force amnesia).</Rule>
+              <Rule id="5.5">Wyłącznie szef zarejestrowanej organizacji przestępczej może wymusić amnezję osobie będącej w stanie <Tag>BW</Tag> (force amnesia).</Rule>
             </ol>
           </section>
 
@@ -230,12 +225,11 @@ export default function RulesPage() {
               <Rule id="6.4">Zakazuje się rabowania gracza niebiorącego udziału w tej samej akcji RP.</Rule>
               <Rule id="6.5">Jeżeli ktoś celowo ucieka do green zone, by uniknąć akcji RP, dozwolona jest kontynuacja akcji na jej terenie.</Rule>
               <Rule id="6.6">Do każdego napadu potrzebny jest co najmniej jeden prawdziwy zakładnik i negocjacje z obu stron. Otwarcie ognia musi być poprzedzone negocjacjami. Każde zerwanie musi być zakomunikowane głosowo. Złamanie = <Tag>RDM</Tag>.</Rule>
-              <Rule id="6.7">Zakazuje się okradania graczy, którzy piorą brudne pieniądze.</Rule>
-              <Rule id="6.8">W odbiciu konwoju może brać udział maks. 10 odbijających i 8 policjantów.</Rule>
-              <Rule id="6.9">Zakazuje się porywania pracowników firm pełniących swoje obowiązki. Wyjątek: wcześniej zaplanowane porwania z powodów RP.</Rule>
-              <Rule id="6.10">Porwanie z miejsca publicznego wymaga dobrego powodu RP i musi być wcześniej zaplanowane.</Rule>
-              <Rule id="6.11">Podczas napadu skryptowego można wziąć maks. 6 zakładników. Obowiązuje zasada: 1 żądanie = 1 zakładnik.</Rule>
-              <Rule id="6.12">Zakazuje się wtrącania w napady przez osoby trzecie, nie wolno ingerować w starcie napastników z policją.</Rule>
+              <Rule id="6.7">W odbiciu konwoju może brać udział maks. 9 odbijających i 10 policjantów.</Rule>
+              <Rule id="6.8">Zakazuje się porywania pracowników firm pełniących swoje obowiązki. Wyjątek: wcześniej zaplanowane porwania z powodów RP.</Rule>
+              <Rule id="6.9">Porwanie z miejsca publicznego wymaga dobrego powodu RP i musi być wcześniej zaplanowane.</Rule>
+              <Rule id="6.10">Podczas napadu skryptowego można wziąć maks. 10 zakładników. Obowiązuje zasada: 1 żądanie = 1 zakładnik.</Rule>
+              <Rule id="6.11">Zakazuje się wtrącania w napady przez osoby trzecie, nie wolno ingerować w starcie napastników z policją.</Rule>
             </ol>
           </section>
 
@@ -255,19 +249,16 @@ export default function RulesPage() {
                   Inne klasy na głębokich piaskach lub stromych stokach traktowane są jako <Tag>FD</Tag>.
                 </span>
               </li>
-              <Rule id="7.3">Całkowity zakaz kradzieży aut z parkingu Car Dealera.</Rule>
-              <Rule id="7.4">Całkowity zakaz kradzieży aut z warsztatu LSCM.</Rule>
+              <Rule id="7.3">Całkowity zakaz kradzieży aut z warsztatu LSCM.</Rule>
             </ol>
           </section>
 
           <section id="8" data-chapter className="rules-section scroll-mt-24">
             <h2 className="rules-heading">Obywatel</h2>
             <ol className="rules-list">
-              <Rule id="8.1">Zakazuje się posiadania przedmiotów powiązanych z LSPD/SWAT: radia, munduru, bodycama i GPS.</Rule>
-              <Rule id="8.2">Zakazuje się posiadania przedmiotów powiązanych z EMS/LSFD: apteczki, defibrylatora, munduru medycznego i strażackiego.</Rule>
-              <Rule id="8.3">Każdy obywatel musi mieć przy sobie dowód osobisty. Brak dowodu nie ma usprawiedliwienia.</Rule>
-              <Rule id="8.4">Pracując w legalnej pracy, masz obowiązek poruszać się wyłącznie pojazdem firmowym od przebrania w strój do spieniężenia pracy.</Rule>
-              <Rule id="8.5">Pojazdy i majątek osób martwych lub permanentnie zbanowanych przepadają (chyba że istnieją umowy/testamenty). Przedmioty limitowane wracają na licytację.</Rule>
+              <Rule id="8.1">Każdy obywatel musi mieć przy sobie dowód osobisty. Brak dowodu nie ma usprawiedliwienia.</Rule>
+              <Rule id="8.2">Pracując w legalnej pracy, masz obowiązek poruszać się wyłącznie pojazdem firmowym od przebrania w strój do spieniężenia pracy.</Rule>
+              <Rule id="8.3">Pojazdy i majątek osób martwych lub permanentnie zbanowanych przepadają (chyba że istnieją umowy/testamenty). Przedmioty limitowane wracają na licytację.</Rule>
             </ol>
           </section>
 
