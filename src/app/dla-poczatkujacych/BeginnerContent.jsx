@@ -15,9 +15,9 @@ const STEPS = [
 ]
 
 const FIRST_STEPS = [
-  { title: 'Zbuduj postać', desc: 'Wymyśl imię, przeszłość i charakter. Im więcej szczegółów, tym ciekawsza gra dla Ciebie i innych.' },
-  { title: 'Znajdź legalną pracę', desc: 'Na start wybierz coś prostego: taksówka, warsztat, dostawy. Zarobisz pierwsze pieniądze i poznasz miasto.' },
-  { title: 'Mów zawsze w roli', desc: 'Jesteś swoją postacią. Korzystaj z głosu i traktuj innych jak bohaterów, nie jak graczy.' },
+  { title: 'Stwórz postać', desc: 'Wymyśl imię, przeszłość i charakter. Im więcej szczegółów, tym ciekawsza gra dla Ciebie i innych.' },
+  { title: 'Znajdź pracę', desc: 'Na start wybierz coś prostego: taksówka, warsztat, dostawy. Zarobisz pierwsze pieniądze i poznasz miasto.' },
+  { title: 'Graj imersyjnie', desc: 'Jesteś swoją postacią. Korzystaj z głosu i traktuj innych jak bohaterów, nie jak graczy.' },
   { title: 'Nie spiesz się', desc: 'Dobry roleplay to nie wyścig. Najlepsze historie rodzą się powoli, w drobnych interakcjach.' },
 ]
 
