@@ -206,7 +206,7 @@ export default function RulesPage() {
                     </thead>
                     <tbody>
                       {[
-                        ['Kasetka', '1–4', '2–6', false],
+                        ['Kasetka', '1–2', '2–4', false],
                         ['Jubiler', '2–4', '3–7', true],
                         ['Bank', '2–5', '4–10', true],
                         ['Jacht', '3–5', '4–10', true],
