@@ -16,9 +16,19 @@ const TOC = [
   { id: 'zmiany', n: '07', label: 'Zmiany polityki' },
 ]
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://outsetrp.pl' },
+    { '@type': 'ListItem', position: 2, name: 'Polityka prywatności', item: 'https://outsetrp.pl/polityka-prywatnosci' },
+  ],
+}
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <header className="-mt-[72px] pb-16 pt-[10.5rem] [background:radial-gradient(ellipse_55%_70%_at_12%_60%,oklch(from_var(--color-primary)_l_c_h/0.10),transparent_65%),radial-gradient(ellipse_35%_45%_at_85%_25%,oklch(from_var(--color-glow)_l_c_h/0.06),transparent_55%)] max-sm:pb-10 max-sm:pt-[8.5rem]">
         <div className="mx-auto max-w-page px-8 min-[1921px]:max-w-wide max-sm:px-5">
           <span className="kicker">Dokument prawny</span>

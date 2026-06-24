@@ -1,35 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { FAQS } from '@/data/faqs'
 
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
-
-const FAQS = [
-  {
-    q: 'Jak wygląda proces dołączenia do serwera?',
-    a: 'OutsetRP działa na systemie whitelist. Dołącz na nasz Discord, zapoznaj się z regulaminem i wypełnij formularz aplikacyjny. Ekipa rozpatruje wnioski i po pozytywnej weryfikacji otrzymasz dostęp.',
-  },
-  {
-    q: 'Ile czeka się na rozpatrzenie aplikacji?',
-    a: 'Rozpatrywanie wniosków zajmuje zazwyczaj 24 do 72 godzin. W weekendy i podczas dużego ruchu czas może się wydłużyć. Status sprawdzisz na Discordzie w dedykowanym kanale.',
-  },
-  {
-    q: 'Czy granie na serwerze jest płatne?',
-    a: 'Nie. Gra na OutsetRP jest w pełni darmowa. Sklep z pakietami VIP istnieje wyłącznie jako dobrowolne wsparcie i nie daje żadnej przewagi w rozgrywce.',
-  },
-  {
-    q: 'Jaki sprzęt i oprogramowanie są potrzebne?',
-    a: 'Potrzebujesz legalnej kopii GTA V oraz klienta FiveM (dostępny bezpłatnie na fivem.net). Minimalne wymagania to 8 GB RAM i karta graficzna z obsługą DirectX 11.',
-  },
-  {
-    q: 'Co się dzieje po naruszeniu regulaminu?',
-    a: 'System kar działa stopniowo: ostrzeżenie, kick, ban czasowy, a przy poważnych naruszeniach ban permanentny. Każda decyzja jest udokumentowana. Odwołanie składa się przez ticket na Discordzie.',
-  },
-  {
-    q: 'Jak zgłosić gracza lub problem techniczny?',
-    a: 'Zgłoszenia trafiają przez system ticketów na Discordzie. Nigdy nie zgłaszaj problemów w grze na kanale IC, wyłącznie ticket system. Staramy się odpowiadać na każde zgłoszenie w ciągu kilku godzin.',
-  },
-]
 
 function FaqItem({ question, answer, open, onToggle, index }) {
   return (
@@ -73,6 +47,27 @@ export default function FaqSection() {
     )
     items.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
+  }, [])
+
+  // Reserve a fixed height for the list (collapsed rows + tallest answer) so
+  // opening an item doesn't grow the section and push the CTA below it.
+  useEffect(() => {
+    const list = listRef.current
+    if (!list) return
+    const compute = () => {
+      const itemEls = Array.from(list.querySelectorAll('.faq-item'))
+      if (!itemEls.length) return
+      let base = itemEls.length // ~1px border per item
+      itemEls.forEach((it) => { base += it.querySelector('.faq-q')?.offsetHeight ?? 0 })
+      let maxAns = 0
+      list.querySelectorAll('.faq-answer-inner').forEach((el) => { maxAns = Math.max(maxAns, el.scrollHeight) })
+      list.style.minHeight = `${base + maxAns + 8}px`
+    }
+    compute()
+    const t = setTimeout(compute, 350) // recompute after webfont settles
+    window.addEventListener('resize', compute)
+    if (document.fonts?.ready) document.fonts.ready.then(compute).catch(() => {})
+    return () => { clearTimeout(t); window.removeEventListener('resize', compute) }
   }, [])
 
   return (

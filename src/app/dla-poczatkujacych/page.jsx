@@ -7,6 +7,20 @@ export const metadata = {
   alternates: { canonical: '/dla-poczatkujacych' },
 }
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://outsetrp.pl' },
+    { '@type': 'ListItem', position: 2, name: 'Dla początkujących', item: 'https://outsetrp.pl/dla-poczatkujacych' },
+  ],
+}
+
 export default function Page() {
-  return <BeginnerContent />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <BeginnerContent />
+    </>
+  )
 }

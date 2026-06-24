@@ -12,31 +12,38 @@ const SITE_URL =
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'OutsetRP — Serwer FiveM',
+  title: {
+    default: 'OutsetRP — Polski serwer FiveM Roleplay',
+    template: '%s',
+  },
   description:
-    'OutsetRP to casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord, przejdź weryfikację i wskocz do Los Santos.',
+    'OutsetRP to polski serwer roleplay na FiveM (GTA V) z systemem whitelist. Casualowy RP w Los Santos: dołącz na Discord, przejdź weryfikację i zacznij grać.',
+  keywords: ['FiveM', 'serwer FiveM', 'serwer roleplay', 'FiveM RP', 'polski serwer FiveM', 'GTA RP', 'whitelist', 'OutsetRP', 'Los Santos'],
+  applicationName: 'OutsetRP',
+  category: 'games',
   icons: { icon: '/logo.svg', apple: '/logo.svg' },
   verification: { google: 'X91OcjHGhJup6yjiLG6xmwvXQZvVEELLlPa0zvzl78k' },
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    title: 'OutsetRP — Serwer FiveM',
+    title: 'OutsetRP — Polski serwer FiveM Roleplay',
     description:
-      'Casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
+      'Polski serwer roleplay na FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
     url: SITE_URL,
     siteName: 'OutsetRP',
     locale: 'pl_PL',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OutsetRP — Serwer FiveM',
-    description: 'Casualowy serwer roleplay FiveM z systemem whitelist.',
+    title: 'OutsetRP — Polski serwer FiveM Roleplay',
+    description: 'Polski serwer roleplay na FiveM z systemem whitelist.',
   },
 }
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#0A0E1A',
 }
 
 export default function RootLayout({ children }) {
