@@ -2,6 +2,8 @@ node_modules
 .next
 out
 dist
+iis-deploy
+*.zip
 .env
 .env.local
 .vercel
