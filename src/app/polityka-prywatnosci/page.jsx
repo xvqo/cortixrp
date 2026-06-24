@@ -2,7 +2,7 @@ const LAST_UPDATED = '4 czerwca 2025'
 const DISCORD_URL = 'https://discord.gg/'
 
 export const metadata = {
-  title: 'Polityka prywatności — OutsetRP',
+  title: 'Polityka prywatności · OutsetRP',
   description: 'Polityka prywatności serwisu OutsetRP.',
 }
 

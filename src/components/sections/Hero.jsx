@@ -103,15 +103,15 @@ export default function Hero() {
           className="my-5 max-w-[15ch] font-display text-hero font-extrabold leading-[0.98] tracking-[-0.025em] text-ink text-balance [font-stretch:118%] animate-rise max-lg:max-w-[16ch]"
           style={{ animationDelay: '0.1s' }}
         >
-          Graj na własnych <em className="not-italic text-primary text-glow-shadow">zasadach</em>
+          Twoje miasto, Twoje <em className="not-italic text-primary text-glow-shadow">zasady</em>
         </h1>
 
         <p
           className="mb-10 max-w-[46ch] text-lg leading-[1.7] text-ink-muted animate-rise max-lg:max-w-[54ch] max-[480px]:text-base"
           style={{ animationDelay: '0.18s' }}
         >
-          Casualowy roleplay w nocnym Los Santos. Policjant, mechanik,
-          przedsiębiorca albo ktoś zupełnie inny: to Ty piszesz tę historię.
+          Serwer roleplay, na którym sam decydujesz, kim jesteś. Policjant, mechanik,
+          właściciel firmy albo ktoś, kogo dopiero wymyślisz. W Los Santos liczy się Twoja historia.
         </p>
 
         <div

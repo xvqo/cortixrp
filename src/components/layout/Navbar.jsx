@@ -53,7 +53,7 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          aria-label="OutsetRP — strona główna"
+          aria-label="OutsetRP, strona główna"
           className="flex items-center"
         >
           <img src="/logo.svg" alt="OutsetRP" width={56} height={56} className="h-14 w-auto" />
@@ -109,7 +109,7 @@ export default function Navbar() {
       <div className="relative z-10 mx-auto flex h-[72px] max-w-page items-center gap-8 px-8 min-[1921px]:max-w-wide max-md:px-6">
         <Link
           href="/"
-          aria-label="OutsetRP — strona główna"
+          aria-label="OutsetRP, strona główna"
           className="mr-auto flex items-center"
           onClick={(e) => {
             if (pathname === '/') {

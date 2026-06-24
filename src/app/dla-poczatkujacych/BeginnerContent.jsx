@@ -7,18 +7,18 @@ import FluidShader from '@/components/FluidShader'
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 const STEPS = [
-  { num: '01', title: 'Dołącz na Discord', desc: 'Wejdź na nasz serwer Discord. To centrum całej społeczności. Tam znajdziesz ogłoszenia, kanały tematyczne i kontakt z ekipą.' },
-  { num: '02', title: 'Przeczytaj regulamin', desc: 'Zapoznaj się dokładnie z zasadami gry w kanale #regulamin. Znajomość regulaminu jest wymagana podczas rozmowy weryfikacyjnej.' },
-  { num: '03', title: 'Czekaj na otwarte okienko', desc: 'Rekrutacja odbywa się w ustalonych terminach. Śledź kanał #ogłoszenia: tam pojawiają się informacje o otwartych okienkach.' },
-  { num: '04', title: 'Wejdź na kanał głosowy', desc: 'Gdy rekrutacja jest otwarta, przejdź na dedykowany kanał głosowy. Upewnij się, że masz sprawny mikrofon.' },
-  { num: '05', title: 'Zdaj rozmowę', desc: 'Porozmawiasz z członkiem ekipy, który sprawdzi czy znasz zasady i rozumiesz klimat roleplay. To nieformalna rozmowa, nie egzamin.' },
+  { num: '01', title: 'Wejdź na Discord', desc: 'To centrum całej społeczności. Znajdziesz tam ogłoszenia, kanały tematyczne i bezpośredni kontakt z ekipą.' },
+  { num: '02', title: 'Przeczytaj regulamin', desc: 'Poznaj zasady w kanale #regulamin. Ich znajomość sprawdzimy podczas krótkiej rozmowy, więc nie pomijaj tego kroku.' },
+  { num: '03', title: 'Złap otwarte okienko', desc: 'Nabór rusza w ustalonych terminach. Śledź kanał #ogłoszenia, tam pojawiają się wolne miejsca.' },
+  { num: '04', title: 'Wbij na kanał głosowy', desc: 'Gdy nabór jest otwarty, dołącz na wskazany kanał. Wcześniej sprawdź, czy mikrofon działa.' },
+  { num: '05', title: 'Porozmawiaj z ekipą', desc: 'Krótka rozmowa, nie egzamin. Sprawdzamy, czy znasz zasady i czujesz klimat gry.' },
 ]
 
 const FIRST_STEPS = [
-  { title: 'Stwórz swoją postać', desc: 'Wymyśl imię, historię i osobowość. Im bardziej przemyślana postać, tym lepsza rozgrywka dla Ciebie i innych.' },
-  { title: 'Zacznij od legalnej pracy', desc: 'Na starcie wybierz legalną pracę: taksówkarz, mechanik, dostawca. Zarobisz pierwsze pieniądze i poznasz miasto.' },
-  { title: 'Rozmawiaj zawsze IC', desc: 'Na serwerze jesteś swoją postacią. Używaj voice chatu, traktuj innych jak ich postacie, nie jak graczy.' },
-  { title: 'Nie śpiesz się', desc: 'Dobry RP to nie wyścig. Rób rzeczy powoli i naturalnie. Każda interakcja to okazja do budowania historii.' },
+  { title: 'Zbuduj postać', desc: 'Wymyśl imię, przeszłość i charakter. Im więcej szczegółów, tym ciekawsza gra dla Ciebie i innych.' },
+  { title: 'Znajdź legalną pracę', desc: 'Na start wybierz coś prostego: taksówka, warsztat, dostawy. Zarobisz pierwsze pieniądze i poznasz miasto.' },
+  { title: 'Mów zawsze w roli', desc: 'Jesteś swoją postacią. Korzystaj z głosu i traktuj innych jak bohaterów, nie jak graczy.' },
+  { title: 'Nie spiesz się', desc: 'Dobry roleplay to nie wyścig. Najlepsze historie rodzą się powoli, w drobnych interakcjach.' },
 ]
 
 const TERMS = [

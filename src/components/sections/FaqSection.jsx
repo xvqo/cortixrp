@@ -75,10 +75,10 @@ export default function FaqSection() {
       <div className="mx-auto grid max-w-page grid-cols-[1fr_1.5fr] items-start gap-[clamp(3rem,6vw,6rem)] px-8 min-[1921px]:max-w-wide max-[900px]:grid-cols-1 max-[900px]:gap-10 max-md:px-6">
         <div>
           <h2 className="mb-5 font-display text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-ink [font-stretch:112%]">
-            Pytania<br />i odpowiedzi
+            Zanim<br />dołączysz
           </h2>
           <p className="mb-8 max-w-[34ch] text-base leading-[1.7] text-ink-muted max-[900px]:max-w-none">
-            Zebraliśmy odpowiedzi na najczęstsze pytania przed dołączeniem do serwera.
+            Najczęstsze pytania o dołączenie, zasady i pierwsze kroki w grze.
           </p>
           <a
             href={DISCORD_URL}

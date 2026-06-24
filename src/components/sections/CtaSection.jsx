@@ -13,10 +13,10 @@ export default function CtaSection() {
       <div className="relative z-[3] mx-auto flex max-w-narrow flex-col items-center gap-6 text-center min-[1921px]:max-w-[860px]">
         <span className="kicker">Whitelist otwarta</span>
         <h2 className="font-display text-3xl font-extrabold leading-none tracking-[-0.025em] text-ink [font-stretch:115%]">
-          Gotowy na <em className="not-italic text-primary text-glow-shadow">Los Santos</em>?
+          Twoja historia zaczyna się <em className="not-italic text-primary text-glow-shadow">teraz</em>
         </h2>
         <p className="max-w-[46ch] text-lg leading-[1.7] text-ink-muted max-md:text-base">
-          Wejdź na Discord, przejdź krótką weryfikację i wskocz do miasta jeszcze dziś.
+          Wejdź na Discord, przejdź krótką weryfikację i odbierz dostęp. Reszta dzieje się już w grze.
         </p>
         <div className="mt-2 flex flex-wrap justify-center gap-4 max-[480px]:w-full max-[480px]:flex-col">
           <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn-primary max-[480px]:w-full">

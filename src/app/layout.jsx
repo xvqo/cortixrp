@@ -26,7 +26,7 @@ const SITE_URL =
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'OutsetRP — Polski serwer FiveM Roleplay',
+    default: 'OutsetRP · Polski serwer roleplay',
     template: '%s',
   },
   description:
@@ -39,7 +39,7 @@ export const metadata = {
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    title: 'OutsetRP — Polski serwer FiveM Roleplay',
+    title: 'OutsetRP · Polski serwer roleplay',
     description:
       'Polski serwer roleplay na FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
     url: SITE_URL,
@@ -48,7 +48,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OutsetRP — Polski serwer FiveM Roleplay',
+    title: 'OutsetRP · Polski serwer roleplay',
     description: 'Polski serwer roleplay na FiveM z systemem whitelist.',
   },
 }
@@ -83,11 +83,11 @@ export default function RootLayout({ children }) {
                 {
                   '@type': 'WebSite',
                   '@id': 'https://outsetrp.pl/#website',
-                  name: 'OutsetRP — Serwer FiveM',
+                  name: 'OutsetRP · Serwer roleplay',
                   url: 'https://outsetrp.pl',
                   inLanguage: 'pl-PL',
                   description:
-                    'Casualowy serwer roleplay FiveM z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
+                    'Casualowy serwer roleplay z systemem whitelist. Dołącz na Discord i wskocz do Los Santos.',
                   publisher: { '@id': 'https://outsetrp.pl/#org' },
                 },
               ],

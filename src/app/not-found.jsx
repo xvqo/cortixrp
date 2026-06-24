@@ -3,7 +3,7 @@ import Link from 'next/link'
 const DISCORD_URL = 'https://discord.gg/CZEtYxkTDy'
 
 export const metadata = {
-  title: 'Nie znaleziono — OutsetRP',
+  title: 'Nie znaleziono · OutsetRP',
   robots: { index: false },
 }
 
