@@ -1,8 +1,21 @@
+import { Archivo, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import SmoothScroll from '@/components/SmoothScroll'
 import './globals.css'
+
+const archivo = Archivo({
+  subsets: ['latin', 'latin-ext'],
+  axes: ['wdth'],
+  display: 'swap',
+  variable: '--font-archivo',
+})
+const jbmono = JetBrains_Mono({
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-jbmono',
+})
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -48,15 +61,9 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pl" suppressHydrationWarning>
+    <html lang="pl" suppressHydrationWarning className={`${archivo.variable} ${jbmono.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=JetBrains+Mono:wght@400;500;700&display=swap"
-        />
-        <link rel="preload" as="image" href="/hero-bg.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/characters.webp" fetchPriority="high" />
       </head>
       <body>
         <script

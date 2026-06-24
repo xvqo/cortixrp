@@ -74,7 +74,7 @@ export default function RulesPage() {
   return (
     <div className="doc-page">
       <header className="doc-hero">
-        <img src="/hero-bg.png" alt="" aria-hidden="true" className="doc-hero-bg" draggable={false} />
+        <img src="/hero-bg.webp" alt="" aria-hidden="true" className="doc-hero-bg" draggable={false} />
         <div className="doc-hero-fx"><FluidShader dim={0.95} /></div>
         <div className="scrim-doc" aria-hidden="true" />
         <div className="glow-radial" aria-hidden="true" />

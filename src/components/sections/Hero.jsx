@@ -59,7 +59,7 @@ export default function Hero() {
 
       <img
         ref={charRef}
-        src="/characters.png"
+        src="/characters.webp"
         alt=""
         aria-hidden="true"
         className="hero-characters"

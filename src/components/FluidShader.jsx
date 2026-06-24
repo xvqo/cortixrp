@@ -108,11 +108,13 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
       return true
     }
 
+    let cssW = 0, cssH = 0, dirty = true
     function syncSize() {
+      if (!dirty) return
+      dirty = false
       const dpr = Math.min(window.devicePixelRatio || 1, 1.25)
-      const rect = canvas.getBoundingClientRect()
-      const w = Math.max(1, Math.floor(rect.width * dpr * quality))
-      const h = Math.max(1, Math.floor(rect.height * dpr * quality))
+      const w = Math.max(1, Math.floor(cssW * dpr * quality))
+      const h = Math.max(1, Math.floor(cssH * dpr * quality))
       if (w === cw && h === ch) return
       cw = w; ch = h
       canvas.width = w; canvas.height = h
@@ -159,12 +161,15 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
     const io = new IntersectionObserver(([e]) => { onScreen = e.isIntersecting }, { threshold: 0 })
     io.observe(canvas)
 
-    // A static-frame fallback also needs to re-render on resize.
-    let ro = null
-    if (reduced) {
-      ro = new ResizeObserver(() => render(40))
-      ro.observe(canvas)
-    }
+    // Size tracked via ResizeObserver — no per-frame layout reads (avoids forced reflow)
+    const seed = canvas.getBoundingClientRect()
+    cssW = seed.width; cssH = seed.height; dirty = true
+    const ro = new ResizeObserver((entries) => {
+      const cr = entries[entries.length - 1].contentRect
+      cssW = cr.width; cssH = cr.height; dirty = true
+      if (reduced) render(40)
+    })
+    ro.observe(canvas)
 
     startRendering()
 
