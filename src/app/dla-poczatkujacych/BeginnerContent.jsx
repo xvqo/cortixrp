@@ -106,7 +106,7 @@ export default function BeginnerPage() {
           <h2 className="beginner-title">Jak dołączyć do serwera</h2>
           <p className="beginner-sub">
             OutsetRP działa na systemie whitelist: każdy gracz przechodzi krótką weryfikację.
-            Rekrutacja odbywa się w otwartych okienkach, o których dowiesz się na Discordzie.
+            Nabór rusza w otwartych okienkach, o których dowiesz się na Discordzie.
           </p>
 
           <div className="relative mt-2">
@@ -175,7 +175,7 @@ export default function BeginnerPage() {
         <div className="beginner-cta">
           <div className="beginner-cta-content">
             <h2>Gotowy na Los Santos?</h2>
-            <p>Dołącz na Discord, śledź ogłoszenia i złap wolne okienko rekrutacyjne.</p>
+            <p>Dołącz na Discord, śledź ogłoszenia i złap wolne okienko naboru.</p>
           </div>
           <div className="beginner-cta-actions">
             <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn-primary">Dołącz na Discord</a>
