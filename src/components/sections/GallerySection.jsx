@@ -3,6 +3,11 @@
 import { useState, useRef, useEffect } from 'react'
 import { galleryImages } from '@/data/galleryImages'
 
+// Grid thumbnails: serve pre-generated resized variants (lightbox still uses the full image).
+const thumbBase = (src) => src.replace(/\.webp$/, '')
+const thumbSrc = (src) => `${thumbBase(src)}-1024.webp`
+const thumbSrcSet = (src) => `${thumbBase(src)}-512.webp 512w, ${thumbBase(src)}-1024.webp 1024w`
+
 function ImageIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
@@ -106,7 +111,14 @@ export default function GallerySection() {
               aria-label={`Otwórz: ${img.alt}`}
             >
               {img.src ? (
-                <img src={img.src} alt={img.alt} loading="lazy" />
+                <img
+                  src={thumbSrc(img.src)}
+                  srcSet={thumbSrcSet(img.src)}
+                  sizes="(max-width: 480px) 95vw, (max-width: 900px) 48vw, 33vw"
+                  alt={img.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
               ) : (
                 <div className="gallery-placeholder" aria-hidden="true">
                   <ImageIcon />

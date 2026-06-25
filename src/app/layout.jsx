@@ -13,6 +13,7 @@ const archivo = Archivo({
 const jbmono = JetBrains_Mono({
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
+  preload: false, // only used for small UI labels; keep it out of the critical path
   variable: '--font-jbmono',
 })
 
