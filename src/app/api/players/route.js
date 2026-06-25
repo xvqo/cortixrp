@@ -3,8 +3,8 @@
 //
 // Two sources, in order of reliability:
 //  1) Direct query to the game server's dynamic.json (set FIVEM_SERVER="ip:port" in env).
-//     This bypasses Cloudflare, so it works from Vercel's datacenter IPs.
-//  2) FiveM frontend API by cfx join id (works from residential IPs, often blocked from datacenters).
+//     This bypasses Cloudflare, so it works even from hosts the FiveM API blocks.
+//  2) FiveM frontend API by cfx join id (works from most IPs, sometimes blocked from datacenters).
 
 const CFX_ID = '8emodg5'
 const DIRECT = process.env.FIVEM_SERVER // e.g. "51.83.x.x:30120"

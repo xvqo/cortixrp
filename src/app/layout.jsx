@@ -1,5 +1,4 @@
 import { Archivo, JetBrains_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import SmoothScroll from '@/components/SmoothScroll'
@@ -17,11 +16,7 @@ const jbmono = JetBrains_Mono({
   variable: '--font-jbmono',
 })
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
-  (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
-  'https://outsetrp.pl'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://outsetrp.pl'
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -98,7 +93,6 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <Analytics />
       </body>
     </html>
   )

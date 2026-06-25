@@ -53,4 +53,5 @@ Three voice words: **nocturnal, fluid, precise.**
 
 ## Tech
 Next.js 15 (App Router), React 18, Tailwind v4 (CSS-first @theme), Lenis,
-raw WebGL2 fluid shader. Deployed on Vercel. Polish UI copy.
+raw WebGL2 fluid shader. Self-hosted on a Windows VPS (IIS reverse proxy to a
+Next.js standalone Node server). Polish UI copy.
