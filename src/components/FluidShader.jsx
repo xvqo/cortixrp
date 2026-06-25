@@ -131,9 +131,9 @@ export default function FluidShader({ dim = 0.72, className = 'shader-canvas' })
       if (!shown) { shown = true; canvas.style.opacity = '1' } // elegant fade-in once painted
     }
 
-    // Cap to ~30fps: the fluid drifts slowly, so half the frames look identical
-    // while halving main-thread/GPU work (better TBT).
-    const frameInterval = 1000 / 30
+    // Cap to ~24fps: the fluid drifts very slowly, so fewer frames look identical
+    // while cutting main-thread/GPU work (better TBT / less main-thread time).
+    const frameInterval = 1000 / 24
     let lastT = -Infinity
     function loop(now) {
       raf = requestAnimationFrame(loop)
